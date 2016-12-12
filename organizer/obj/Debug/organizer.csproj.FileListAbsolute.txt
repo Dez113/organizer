@@ -1,0 +1,9 @@
+D:\VS\organizer\organizer\bin\Debug\organizer.exe.config
+D:\VS\organizer\organizer\bin\Debug\organizer.exe
+D:\VS\organizer\organizer\bin\Debug\organizer.pdb
+D:\VS\organizer\organizer\obj\Debug\organizer.csprojResolveAssemblyReference.cache
+D:\VS\organizer\organizer\obj\Debug\organizer.Properties.Resources.resources
+D:\VS\organizer\organizer\obj\Debug\organizer.csproj.GenerateResource.Cache
+D:\VS\organizer\organizer\obj\Debug\organizer.exe
+D:\VS\organizer\organizer\obj\Debug\organizer.pdb
+D:\VS\organizer\organizer\obj\Debug\organizer.MainForm.resources
