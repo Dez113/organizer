@@ -22,7 +22,8 @@ namespace organizer
         private void listBox_update()//обновление листбокса после изменений в ContactManager.contactlist (после добавления/удаления контакта)
         {
             listBox1.Items.Clear();
-            foreach (ContactItem item in ContactManager.contactList)//прямое обращение к контактлисту, нужно изменить
+            List<ContactItem> list = manager.ReturnContactList();
+            foreach (ContactItem item in list)//прямое обращение к контактлисту, нужно изменить (изменено криво, смотреть ContactManager.ReturnContactList())
             {
                 string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
                 listBox1.Items.Add(line);
@@ -68,20 +69,21 @@ namespace organizer
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)// замена информации о выбранном контакте в групбокс2
         {
             int listboxIndex = listBox1.SelectedIndex;
-            //MessageBox.Show(listboxIndex.ToString());
+            ContactItem ReturnedContact;
+            ReturnedContact = manager.ReturnContactItemViaListBoxIndex(listboxIndex);
             textBox5.Clear();
             textBox6.Clear();
             textBox7.Clear();
             textBox8.Clear();
-            textBox5.Text=(ContactManager.contactList[listboxIndex].personName);//прямое обращение к контактлисту, нужно изменить
-            textBox6.AppendText(ContactManager.contactList[listboxIndex].personSername);//прямое обращение к контактлисту, нужно изменить
-            textBox7.AppendText(ContactManager.contactList[listboxIndex].personAge.ToString());//прямое обращение к контактлисту, нужно изменить
-            textBox8.AppendText(ContactManager.contactList[listboxIndex].personWebPage);//прямое обращение к контактлисту, нужно изменить
+            textBox5.Text=(ReturnedContact.personName);
+            textBox6.Text=(ReturnedContact.personSername);
+            textBox7.Text=(ReturnedContact.personAge.ToString());
+            textBox8.Text=(ReturnedContact.personWebPage);
         }
 
         private void button2_Click(object sender, EventArgs e)//удаление контакта
         {
-            int listboxIndex = listBox1.SelectedIndex;// почему не удалось воспользоваться переменной из метода выше? как ее объявить уровнем выше?
+            int listboxIndex = listBox1.SelectedIndex;
             if (listboxIndex != -1)
             {
                 manager.RemoveContact(listboxIndex);
@@ -96,36 +98,39 @@ namespace organizer
         private void button3_Click(object sender, EventArgs e)//поиск элемента
         {
             string stringToFind = textBox9.Text;
-            int itemindex = -3;
+            Tuple<ContactItem, int> ReturnedContact = null;
+            //int itemindex = -3;
             if (stringToFind.Length != 0)
             {
-                foreach (ContactItem item in ContactManager.contactList)
-                {
-                    string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
-                    if (line.Contains(stringToFind))
-                    {
-                        itemindex = ContactManager.contactList.IndexOf(item);
-                        break;
-                    }
+                ReturnedContact = manager.ReturnFounded(stringToFind);
+
+                //foreach (ContactItem item in ContactManager.contactList)
+                //{
+                //    string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
+                //    if (line.Contains(stringToFind))
+                //    {
+                //        itemindex = ContactManager.contactList.IndexOf(item);
+                //        break;
+                //    }
                 
                         
                     //foreach (typeof(ContactItem).GetField)
                 }
-                if (itemindex != -3)
-                {
+                if (ReturnedContact != null)
+            {
                     textBox5.Clear();
                     textBox6.Clear();
                     textBox7.Clear();
                     textBox8.Clear();
-                    textBox5.AppendText(ContactManager.contactList[itemindex].personName);
-                    textBox6.AppendText(ContactManager.contactList[itemindex].personSername);
-                    textBox7.AppendText(ContactManager.contactList[itemindex].personAge.ToString());
-                    textBox8.AppendText(ContactManager.contactList[itemindex].personWebPage);
-                    listBox1.SetSelected(itemindex, true);
+                    textBox5.AppendText(ReturnedContact.Item1.personName);
+                    textBox6.AppendText(ReturnedContact.Item1.personSername);
+                    textBox7.AppendText(ReturnedContact.Item1.personAge.ToString());
+                    textBox8.AppendText(ReturnedContact.Item1.personWebPage);
+                    listBox1.SetSelected(ReturnedContact.Item2, true);
                 }
                 
 
             }
         }
     }
-}
+
