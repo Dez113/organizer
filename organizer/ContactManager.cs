@@ -6,6 +6,11 @@ namespace organizer
     {
         private ContactItem item;
 
+        public ContactManager()
+        {
+            
+        }
+
         public ContactManager(ContactItem item)
         {
             this.item = item;
@@ -16,16 +21,13 @@ namespace organizer
         public void AddContact(ContactItem item)
         {
             contactList.Add(item);
-            //foreach (ContactItem contact in contactList)
-            //{
-            //    System.Console.WriteLine(contact.personName);
-            //}
-            
+                        
         }
 
-        public void RemoveContact()
+        public void RemoveContact(int index)
         {
-            //*
+            //
+            contactList.RemoveAt(index);
         
         }
 

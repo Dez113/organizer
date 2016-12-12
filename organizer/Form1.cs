@@ -17,11 +17,12 @@ namespace organizer
             InitializeComponent();
         }
 
-        
+        ContactManager manager = new ContactManager();
+
         private void listBox_update()//обновление листбокса после изменений в ContactManager.contactlist (после добавления/удаления контакта)
         {
             listBox1.Items.Clear();
-            foreach (ContactItem item in ContactManager.contactList)
+            foreach (ContactItem item in ContactManager.contactList)//прямое обращение к контактлисту, нужно изменить
             {
                 string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
                 listBox1.Items.Add(line);
@@ -42,7 +43,7 @@ namespace organizer
             name = textBox1.Text;
             sername = textBox2.Text;
             webpage = textBox4.Text;
-            age = Convert.ToInt32(textBox3.Text);
+            int.TryParse(textBox3.Text, out age);
             if (name.Length == 0 || sername.Length == 0)
             {
                 MessageBox.Show("Имя и фамилия не должны быть пустыми");
@@ -52,13 +53,13 @@ namespace organizer
                 ContactItem conn = new ContactItem(name, sername, webpage, age);
                 //string mess = System.String.Format("{0},{1}",conn.personName, conn.personSername);
                 //MessageBox.Show(mess);
-                ContactManager manager = new ContactManager(conn);
+                //ContactManager manager = new ContactManager(conn);
                 manager.AddContact(conn);
                 listBox_update();
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
-                textBox3.AppendText("0");
+                textBox3.Text= "0";
                 textBox4.Clear();
 
             }
@@ -72,10 +73,10 @@ namespace organizer
             textBox6.Clear();
             textBox7.Clear();
             textBox8.Clear();
-            textBox5.AppendText(ContactManager.contactList[listboxIndex].personName);
-            textBox6.AppendText(ContactManager.contactList[listboxIndex].personSername);
-            textBox7.AppendText(ContactManager.contactList[listboxIndex].personAge.ToString());
-            textBox8.AppendText(ContactManager.contactList[listboxIndex].personWebPage);
+            textBox5.Text=(ContactManager.contactList[listboxIndex].personName);//прямое обращение к контактлисту, нужно изменить
+            textBox6.AppendText(ContactManager.contactList[listboxIndex].personSername);//прямое обращение к контактлисту, нужно изменить
+            textBox7.AppendText(ContactManager.contactList[listboxIndex].personAge.ToString());//прямое обращение к контактлисту, нужно изменить
+            textBox8.AppendText(ContactManager.contactList[listboxIndex].personWebPage);//прямое обращение к контактлисту, нужно изменить
         }
 
         private void button2_Click(object sender, EventArgs e)//удаление контакта
@@ -83,7 +84,7 @@ namespace organizer
             int listboxIndex = listBox1.SelectedIndex;// почему не удалось воспользоваться переменной из метода выше? как ее объявить уровнем выше?
             if (listboxIndex != -1)
             {
-                ContactManager.contactList.RemoveAt(listboxIndex);
+                manager.RemoveContact(listboxIndex);
                 listBox_update();
                 textBox5.Clear();
                 textBox6.Clear();
