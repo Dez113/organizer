@@ -98,11 +98,11 @@ namespace organizer
         private void button3_Click(object sender, EventArgs e)//поиск элемента
         {
             string stringToFind = textBox9.Text;
-            Tuple<ContactItem, int> ReturnedContact = null;
+            ContactItem ReturnedContact = null;
             //int itemindex = -3;
             if (stringToFind.Length != 0)
             {
-                ReturnedContact = manager.ReturnFounded(stringToFind);
+                ReturnedContact = manager.ReturnFoundedContact(stringToFind);
 
                 //foreach (ContactItem item in ContactManager.contactList)
                 //{
@@ -122,11 +122,11 @@ namespace organizer
                     textBox6.Clear();
                     textBox7.Clear();
                     textBox8.Clear();
-                    textBox5.AppendText(ReturnedContact.Item1.personName);
-                    textBox6.AppendText(ReturnedContact.Item1.personSername);
-                    textBox7.AppendText(ReturnedContact.Item1.personAge.ToString());
-                    textBox8.AppendText(ReturnedContact.Item1.personWebPage);
-                    listBox1.SetSelected(ReturnedContact.Item2, true);
+                    textBox5.Text=(ReturnedContact.personName);
+                    textBox6.Text = (ReturnedContact.personSername);
+                    textBox7.Text = (ReturnedContact.personAge.ToString());
+                    textBox8.Text=(ReturnedContact.personWebPage);
+                    listBox1.SetSelected(manager.ReturnContactIndex(ReturnedContact), true);
                 }
                 
 

@@ -39,37 +39,25 @@ namespace organizer
             return contactList;// скорее всего так нельзя (возвращается приватный контактлист)
         }
 
-        public class Tuple<ContactItem, int32>
+        public ContactItem ReturnFoundedContact(string stringToFind)
         {
-            private ContactItem item;
-            private int v;
-
-            public Tuple(ContactItem item, int v)
-            {
-                this.item = item;
-                this.v = v;
-            }
-        }
-
-
-        public Tuple<ContactItem, int> ReturnFounded(string stringToFind)
-        {
-            //public static Tuple<ContactItem, int>;
-            //var result1 = Tuple.Create
-            //List<object> result = new List<object>();
-            foreach(ContactItem item in contactList)
+            ContactItem toreturn = null;
+            foreach (ContactItem item in contactList)
             {
                 string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
                 if (line.Contains(stringToFind))
                 {
+                    toreturn = item;
                     break;
                 }
             }
-            //var Tuple<ContactItem, int> reuslt1(ContactItem item, int contactList.IndexOf(item))
-            Tuple<ContactItem, int> result2 = new Tuple<ContactItem, int>(item, contactList.IndexOf(item));
-            //result.Add(item);
-            //result.Add(contactList.IndexOf(item));
-            return result2;
+            
+            return toreturn;
+        }
+
+        public int ReturnContactIndex(ContactItem item)
+        {
+            return contactList.IndexOf(item);
         }
  }
 }

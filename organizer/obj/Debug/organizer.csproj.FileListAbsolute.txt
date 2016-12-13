@@ -7,3 +7,12 @@ D:\VS\organizer\organizer\obj\Debug\organizer.csproj.GenerateResource.Cache
 D:\VS\organizer\organizer\obj\Debug\organizer.exe
 D:\VS\organizer\organizer\obj\Debug\organizer.pdb
 D:\VS\organizer\organizer\obj\Debug\organizer.MainForm.resources
+D:\VS\Projects\organizer\organizer\bin\Debug\organizer.exe.config
+D:\VS\Projects\organizer\organizer\obj\Debug\organizer.exe
+D:\VS\Projects\organizer\organizer\obj\Debug\organizer.pdb
+D:\VS\Projects\organizer\organizer\obj\Debug\organizer.csprojResolveAssemblyReference.cache
+D:\VS\Projects\organizer\organizer\obj\Debug\organizer.MainForm.resources
+D:\VS\Projects\organizer\organizer\obj\Debug\organizer.Properties.Resources.resources
+D:\VS\Projects\organizer\organizer\obj\Debug\organizer.csproj.GenerateResource.Cache
+D:\VS\Projects\organizer\organizer\bin\Debug\organizer.exe
+D:\VS\Projects\organizer\organizer\bin\Debug\organizer.pdb
