@@ -17,12 +17,10 @@ namespace organizer
             InitializeComponent();
         }
 
-        ContactManager manager = new ContactManager();
-
         private void listBox_update()//обновление листбокса после изменений в ContactManager.contactlist (после добавления/удаления контакта)
         {
             listBox1.Items.Clear();
-            List<ContactItem> list = manager.ReturnContactList();
+            List<ContactItem> list = ContactManager.ReturnContactList();
             foreach (ContactItem item in list)//прямое обращение к контактлисту, нужно изменить (изменено криво, смотреть ContactManager.ReturnContactList())
             {
                 string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
@@ -52,10 +50,7 @@ namespace organizer
             else
             {
                 ContactItem conn = new ContactItem(name, sername, webpage, age);
-                //string mess = System.String.Format("{0},{1}",conn.personName, conn.personSername);
-                //MessageBox.Show(mess);
-                //ContactManager manager = new ContactManager(conn);
-                manager.AddContact(conn);
+                ContactManager.AddContact(conn);
                 listBox_update();
                 textBox1.Clear();
                 textBox2.Clear();
@@ -70,7 +65,7 @@ namespace organizer
         {
             int listboxIndex = listBox1.SelectedIndex;
             ContactItem ReturnedContact;
-            ReturnedContact = manager.ReturnContactItemViaListBoxIndex(listboxIndex);
+            ReturnedContact = ContactManager.ReturnContactItemViaListBoxIndex(listboxIndex);
             textBox5.Clear();
             textBox6.Clear();
             textBox7.Clear();
@@ -86,7 +81,7 @@ namespace organizer
             int listboxIndex = listBox1.SelectedIndex;
             if (listboxIndex != -1)
             {
-                manager.RemoveContact(listboxIndex);
+                ContactManager.RemoveContact(listboxIndex);
                 listBox_update();
                 textBox5.Clear();
                 textBox6.Clear();
@@ -99,22 +94,9 @@ namespace organizer
         {
             string stringToFind = textBox9.Text;
             ContactItem ReturnedContact = null;
-            //int itemindex = -3;
             if (stringToFind.Length != 0)
             {
-                ReturnedContact = manager.ReturnFoundedContact(stringToFind);
-
-                //foreach (ContactItem item in ContactManager.contactList)
-                //{
-                //    string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
-                //    if (line.Contains(stringToFind))
-                //    {
-                //        itemindex = ContactManager.contactList.IndexOf(item);
-                //        break;
-                //    }
-                
-                        
-                    //foreach (typeof(ContactItem).GetField)
+                ReturnedContact = ContactManager.ReturnFoundedContact(stringToFind);
                 }
                 if (ReturnedContact != null)
             {
@@ -126,10 +108,8 @@ namespace organizer
                     textBox6.Text = (ReturnedContact.personSername);
                     textBox7.Text = (ReturnedContact.personAge.ToString());
                     textBox8.Text=(ReturnedContact.personWebPage);
-                    listBox1.SetSelected(manager.ReturnContactIndex(ReturnedContact), true);
+                listBox1.SetSelected(ContactManager.ReturnContactIndex(ReturnedContact), true);
                 }
-                
-
             }
         }
     }

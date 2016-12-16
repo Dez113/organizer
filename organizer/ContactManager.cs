@@ -16,30 +16,30 @@ namespace organizer
             this.item = item;
         }
 
-        public static List<ContactItem> contactList = new List<ContactItem>();
+        private static List<ContactItem> contactList = new List<ContactItem>();
 
-        public void AddContact(ContactItem item)
+        public static void AddContact(ContactItem item)
         {
             contactList.Add(item);
 
         }
 
-        public void RemoveContact(int index)
+        public static void RemoveContact(int index)
         {
             contactList.RemoveAt(index);
         }
 
-        public ContactItem ReturnContactItemViaListBoxIndex(int index)
+        public static ContactItem ReturnContactItemViaListBoxIndex(int index)
         {
             return (contactList[index]);
         }
 
-        public List<ContactItem> ReturnContactList()
+        public static List<ContactItem> ReturnContactList()
         {
             return contactList;// скорее всего так нельзя (возвращается приватный контактлист)
         }
 
-        public ContactItem ReturnFoundedContact(string stringToFind)
+        public static ContactItem ReturnFoundedContact(string stringToFind)
         {
             ContactItem toreturn = null;
             foreach (ContactItem item in contactList)
@@ -55,7 +55,7 @@ namespace organizer
             return toreturn;
         }
 
-        public int ReturnContactIndex(ContactItem item)
+        public static int ReturnContactIndex(ContactItem item)
         {
             return contactList.IndexOf(item);
         }
