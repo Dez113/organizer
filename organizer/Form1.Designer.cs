@@ -36,9 +36,9 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -52,8 +52,13 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -67,7 +72,7 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(346, 259);
             this.groupBox1.TabIndex = 0;
@@ -136,16 +141,6 @@
             this.textBox2.Size = new System.Drawing.Size(184, 20);
             this.textBox2.TabIndex = 1;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(25, 219);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Удалить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(22, 219);
@@ -164,10 +159,20 @@
             this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(25, 219);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Удалить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 342);
+            this.listBox1.Location = new System.Drawing.Point(32, 363);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(703, 199);
             this.listBox1.TabIndex = 8;
@@ -176,7 +181,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 323);
+            this.label6.Location = new System.Drawing.Point(29, 338);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 13);
             this.label6.TabIndex = 3;
@@ -193,7 +198,7 @@
             this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Location = new System.Drawing.Point(377, 12);
+            this.groupBox2.Location = new System.Drawing.Point(371, 23);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(338, 259);
             this.groupBox2.TabIndex = 12;
@@ -271,7 +276,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(359, 283);
+            this.button3.Location = new System.Drawing.Point(326, 298);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 13;
@@ -281,30 +286,63 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(34, 286);
+            this.textBox9.Location = new System.Drawing.Point(32, 301);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(275, 20);
             this.textBox9.TabIndex = 14;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(3, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(770, 607);
+            this.tabControl1.TabIndex = 15;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.textBox9);
+            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(762, 581);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Контакты";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(762, 581);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Закладки";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 560);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(774, 640);
+            this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -334,6 +372,9 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }
 
