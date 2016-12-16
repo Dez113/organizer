@@ -20,8 +20,8 @@ namespace organizer
         private void listBox_update()//обновление листбокса после изменений в ContactManager.contactlist (после добавления/удаления контакта)
         {
             listBox1.Items.Clear();
-            List<ContactItem> list = ContactManager.ReturnContactList();
-            foreach (ContactItem item in list)//прямое обращение к контактлисту, нужно изменить (изменено криво, смотреть ContactManager.ReturnContactList())
+            List<NoteItem> list = ContactManager.ReturnContactList();
+            foreach (NoteItem item in list)//прямое обращение к контактлисту, нужно изменить (изменено криво, смотреть ContactManager.ReturnContactList())
             {
                 string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
                 listBox1.Items.Add(line);
@@ -49,7 +49,7 @@ namespace organizer
             }
             else
             {
-                ContactItem conn = new ContactItem(name, sername, webpage, age);
+                NoteItem conn = new NoteItem(name, sername, webpage, age);
                 ContactManager.AddContact(conn);
                 listBox_update();
                 textBox1.Clear();
@@ -64,7 +64,7 @@ namespace organizer
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)// замена информации о выбранном контакте в групбокс2
         {
             int listboxIndex = listBox1.SelectedIndex;
-            ContactItem ReturnedContact;
+            NoteItem ReturnedContact;
             ReturnedContact = ContactManager.ReturnContactItemViaListBoxIndex(listboxIndex);
             textBox5.Clear();
             textBox6.Clear();
@@ -93,7 +93,7 @@ namespace organizer
         private void button3_Click(object sender, EventArgs e)//поиск элемента
         {
             string stringToFind = textBox9.Text;
-            ContactItem ReturnedContact = null;
+            NoteItem ReturnedContact = null;
             if (stringToFind.Length != 0)
             {
                 ReturnedContact = ContactManager.ReturnFoundedContact(stringToFind);
@@ -111,6 +111,18 @@ namespace organizer
                 listBox1.SetSelected(ContactManager.ReturnContactIndex(ReturnedContact), true);
                 }
             }
+        /// <summary>
+        /// Addittion new bookmark
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string Name = textBox13.Text;
+            string Text = textBox12.Text;
+
+
         }
+    }
     }
 

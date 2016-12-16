@@ -53,29 +53,29 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -310,29 +310,13 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(3, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(770, 607);
             this.tabControl1.TabIndex = 15;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox9);
-            this.tabPage1.Controls.Add(this.listBox1);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(762, 581);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Контакты";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -348,63 +332,22 @@
             this.tabPage2.Text = "Закладки";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // label14
             // 
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.textBox12);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Controls.Add(this.textBox13);
-            this.groupBox3.Location = new System.Drawing.Point(6, 17);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(346, 294);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Новая закладка";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 331);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(99, 13);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "Список контактов";
             // 
-            // label13
+            // listBox2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(22, 20);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 13);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Название";
-            // 
-            // textBox12
-            // 
-            this.textBox12.AcceptsTab = true;
-            this.textBox12.Location = new System.Drawing.Point(22, 69);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(302, 173);
-            this.textBox12.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(22, 255);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Добавить";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox13
-            // 
-            this.textBox13.AcceptsTab = true;
-            this.textBox13.Location = new System.Drawing.Point(22, 33);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(184, 20);
-            this.textBox13.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(22, 56);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Текст";
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(9, 356);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(731, 199);
+            this.listBox2.TabIndex = 11;
             // 
             // groupBox4
             // 
@@ -464,22 +407,80 @@
             this.textBox11.Size = new System.Drawing.Size(184, 20);
             this.textBox11.TabIndex = 0;
             // 
-            // label14
+            // groupBox3
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 331);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 13);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "Список контактов";
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.textBox12);
+            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.textBox13);
+            this.groupBox3.Location = new System.Drawing.Point(6, 17);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(346, 294);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Новая закладка";
             // 
-            // listBox2
+            // label10
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(9, 356);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(731, 199);
-            this.listBox2.TabIndex = 11;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 56);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Текст";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(22, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 13);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Название";
+            // 
+            // textBox12
+            // 
+            this.textBox12.AcceptsTab = true;
+            this.textBox12.Location = new System.Drawing.Point(22, 69);
+            this.textBox12.Multiline = true;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(302, 173);
+            this.textBox12.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(22, 255);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Добавить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox13
+            // 
+            this.textBox13.AcceptsTab = true;
+            this.textBox13.Location = new System.Drawing.Point(22, 33);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(184, 20);
+            this.textBox13.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.textBox9);
+            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(762, 581);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Контакты";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -494,14 +495,14 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
