@@ -145,6 +145,21 @@ namespace organizer
             textBox11.Text = (bkmark.bookmarkName);
             textBox10.Text = (bkmark.bookmarkText);
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int lstbox2index = listBox2.SelectedIndex;
+            if (lstbox2index != -1)
+            {
+                NoteManager.RemoveBookmark(lstbox2index);
+                UpdBkMarkLst();
+                textBox10.Clear();
+                textBox11.Clear();
+            }
+            
+
+
+        }
     }
     }
 
