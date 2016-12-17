@@ -17,7 +17,7 @@ namespace organizer
 
         private static List<NoteItem> bookmarklist = new List<NoteItem>();
 
-        public static void AddContact(NoteItem item)
+        public static void AddBookmark(NoteItem item)
         {
             bookmarklist.Add(item);
 

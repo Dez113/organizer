@@ -4,21 +4,21 @@ namespace organizer
 {
     public class ContactManager
     {
-        private NoteItem item;
+        private ContactItem item;
 
         public ContactManager()
         {
 
         }
 
-        public ContactManager(NoteItem item)
+        public ContactManager(ContactItem item)
         {
             this.item = item;
         }
 
-        private static List<NoteItem> contactList = new List<NoteItem>();
+        private static List<ContactItem> contactList = new List<ContactItem>();
 
-        public static void AddContact(NoteItem item)
+        public static void AddContact(ContactItem item)
         {
             contactList.Add(item);
 
@@ -29,20 +29,20 @@ namespace organizer
             contactList.RemoveAt(index);
         }
 
-        public static NoteItem ReturnContactItemViaListBoxIndex(int index)
+        public static ContactItem ReturnContactItemViaListBoxIndex(int index)
         {
             return (contactList[index]);
         }
 
-        public static List<NoteItem> ReturnContactList()
+        public static List<ContactItem> ReturnContactList()
         {
             return contactList;// скорее всего так нельзя (возвращается приватный контактлист)
         }
 
-        public static NoteItem ReturnFoundedContact(string stringToFind)
+        public static ContactItem ReturnFoundedContact(string stringToFind)
         {
-            NoteItem toreturn = null;
-            foreach (NoteItem item in contactList)
+            ContactItem toreturn = null;
+            foreach (ContactItem item in contactList)
             {
                 string line = item.personName + " \t" + item.personSername + " \t" + item.personAge + " \t" + item.personWebPage;
                 if (line.Contains(stringToFind))
@@ -55,7 +55,7 @@ namespace organizer
             return toreturn;
         }
 
-        public static int ReturnContactIndex(NoteItem item)
+        public static int ReturnContactIndex(ContactItem item)
         {
             return contactList.IndexOf(item);
         }
