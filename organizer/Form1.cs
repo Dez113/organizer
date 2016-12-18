@@ -107,13 +107,11 @@ namespace organizer
         private void UpdateNoteList()                                                   //обновление листбокса заметок
         {
             listBox2.Items.Clear();
-            List<NoteItem> notes = NoteManager.ReturnNoteList();
-            foreach(NoteItem line in notes)
+            string[] notes = NoteManager.ReturnNoteList();
+            foreach(string line in notes)
             {
-                
                 listBox2.Items.Add(line);
             }
-
         }
 
         /// <summary>
@@ -125,12 +123,15 @@ namespace organizer
         {
             string Name = textBox13.Text;
             string Text = textBox12.Text;
-            NoteItem item = new NoteItem(Name, Text);
+            if (Name.Length != 0)
+            {
+                NoteItem item = new NoteItem(Name, Text);
 
-            NoteManager.AddNote(item);
-            UpdateNoteList();
-            textBox13.Clear();
-            textBox12.Clear();
+                NoteManager.AddNote(item);
+                UpdateNoteList();
+                textBox13.Clear();
+                textBox12.Clear();
+            }
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)          //обновление заметки в групбоксе
