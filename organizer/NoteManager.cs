@@ -8,55 +8,54 @@ namespace organizer
 {
     class NoteManager
     {
-        public NoteManager()
-        {
+       private static List<NoteItem> notelist = new List<NoteItem>();               //список заметок
 
+        public static void AddNote(NoteItem item)                                   // добавлениие заметки
+        {
+            notelist.Add(item);
         }
 
-        private NoteItem item;
-
-        private static List<NoteItem> bookmarklist = new List<NoteItem>();
-
-        public static void AddBookmark(NoteItem item)
+        public static void RemoveNote(NoteItem item)                                //удаление заметки
         {
-            bookmarklist.Add(item);
-
+            notelist.Remove(item);
         }
 
-        public static void RemoveBookmark(int index)
+        public static NoteItem ReturnNoteItemViaListBoxIndex(int index)             //возвращает элемент по индексу (выбранный элемент в листбоксе)
         {
-            bookmarklist.RemoveAt(index);
+            return (notelist[index]);
         }
 
-        public static NoteItem ReturnNoteItemViaListBoxIndex(int index)
+        public static string[] ReturnNoteList()                                     //возвращает список всех элементов безопасно
         {
-            return (bookmarklist[index]);
+            int i = 0;
+            string[] notes = new string[notelist.Count];
+
+            foreach(NoteItem note in notelist)
+            {
+                notes[i] = note.NoteName + '\t' + note.NoteText;
+                i++;
+            }
+            return notes;
         }
 
-        public static List<NoteItem> ReturnNoteList()
-        {
-            return bookmarklist;// скорее всего так нельзя (возвращается приватный контактлист)
-        }
-
-        public static NoteItem ReturnFoundedContact(string stringToFind)
+        public static NoteItem FoundedContact(string stringToFind)                  //возвращает первый найцденнный контакт
         {
             NoteItem toreturn = null;
-            foreach (NoteItem item in bookmarklist)
+            foreach (NoteItem item in notelist)
             {
-                string line = item.bookmarkName + " \t" + item.bookmarkText;
+                string line = item.NoteName + " \t" + item.NoteText;
                 if (line.Contains(stringToFind))
                 {
                     toreturn = item;
                     break;
                 }
             }
-
             return toreturn;
         }
 
-        public static int ReturnContactIndex(NoteItem item)
+        public static int ReturnContactIndex(NoteItem item)                         //возвращает порядковый номер в листе
         {
-            return bookmarklist.IndexOf(item);
+            return notelist.IndexOf(item);
         }
     }
 }

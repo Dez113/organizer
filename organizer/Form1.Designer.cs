@@ -349,7 +349,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(762, 581);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Закладки";
+            this.tabPage2.Text = "Заметки";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label14
@@ -357,9 +357,9 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(6, 331);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 13);
+            this.label14.Size = new System.Drawing.Size(90, 13);
             this.label14.TabIndex = 10;
-            this.label14.Text = "Список контактов";
+            this.label14.Text = "Список заметок";
             // 
             // listBox2
             // 
@@ -382,7 +382,7 @@
             this.groupBox4.Size = new System.Drawing.Size(346, 294);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Текущая закладка";
+            this.groupBox4.Text = "Текущая заметка";
             // 
             // label11
             // 
@@ -443,7 +443,7 @@
             this.groupBox3.Size = new System.Drawing.Size(346, 294);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Новая закладка";
+            this.groupBox3.Text = "Новая заметка";
             // 
             // label10
             // 

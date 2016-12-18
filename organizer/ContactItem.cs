@@ -8,17 +8,17 @@ namespace organizer
 {
     public class ContactItem
     {
-        public string personName;
-        public string personSername;
-        public string personWebPage;
-        public int personAge;
+        public string Name;
+        public string Sername;
+        public string WebPage;
+        public int Age;
 
-        public ContactItem(string personName, string personSername, string personWebPage, int personAge)
+        public ContactItem(string Name, string Sername, string WebPage, int Age)
         {
-            this.personName = personName;
-            this.personSername = personSername;
-            this.personWebPage = personWebPage;
-            this.personAge = personAge;
+            this.Name = Name;
+            this.Sername = Sername;
+            this.WebPage = WebPage;
+            this.Age = Age;
         }
     }
 }

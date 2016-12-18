@@ -8,14 +8,14 @@ namespace organizer
 {
     public class NoteItem
     {
-        public string bookmarkName;
-        public string bookmarkText;
+        public string NoteName;
+        public string NoteText;
 
 
-        public NoteItem (string bookmarkName, string bookmarkText)
+        public NoteItem (string NoteName, string NoteText)
         {
-            this.bookmarkName = bookmarkName;
-            this.bookmarkText = bookmarkText;
+            this.NoteName = NoteName;
+            this.NoteText = NoteText;
         }
     }
 }
