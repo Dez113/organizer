@@ -155,6 +155,22 @@ namespace organizer
                 textBox11.Clear();
             }
         }
+
+        private void OnExit(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBox.Show("пока");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ContactManager.save();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ContactManager.read();
+            listBox_update();
+        }
     }
 }
 
