@@ -263,6 +263,7 @@
             this.textBox5.AcceptsTab = true;
             this.textBox5.Location = new System.Drawing.Point(25, 33);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(184, 20);
             this.textBox5.TabIndex = 4;
             // 
@@ -272,6 +273,7 @@
             this.textBox6.Location = new System.Drawing.Point(25, 69);
             this.textBox6.MaxLength = 3;
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(184, 20);
             this.textBox6.TabIndex = 3;
             // 
@@ -280,6 +282,7 @@
             this.textBox7.AcceptsTab = true;
             this.textBox7.Location = new System.Drawing.Point(25, 117);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(98, 20);
             this.textBox7.TabIndex = 1;
             // 
@@ -288,6 +291,7 @@
             this.textBox8.AcceptsTab = true;
             this.textBox8.Location = new System.Drawing.Point(25, 180);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(258, 20);
             this.textBox8.TabIndex = 0;
             // 
@@ -404,6 +408,7 @@
             this.textBox10.Location = new System.Drawing.Point(22, 69);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(302, 173);
             this.textBox10.TabIndex = 1;
             // 
@@ -422,6 +427,7 @@
             this.textBox11.AcceptsTab = true;
             this.textBox11.Location = new System.Drawing.Point(22, 33);
             this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(184, 20);
             this.textBox11.TabIndex = 0;
             // 
