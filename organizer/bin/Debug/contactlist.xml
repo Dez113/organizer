@@ -1,7 +1,33 @@
 <?xml version="1.0"?>
-<ContactItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>fghgjkj,kl</Name>
-  <Sername>kkkk</Sername>
-  <WebPage />
-  <Age>1</Age>
-</ContactItem>tItem>tactItem>>em>Item>
+<ArrayOfContactItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContactItem>
+    <Name>1</Name>
+    <Sername>2</Sername>
+    <WebPage>4</WebPage>
+    <Age>3</Age>
+  </ContactItem>
+  <ContactItem>
+    <Name>123</Name>
+    <Sername>122</Sername>
+    <WebPage>5</WebPage>
+    <Age>444</Age>
+  </ContactItem>
+  <ContactItem>
+    <Name>11</Name>
+    <Sername>2</Sername>
+    <WebPage />
+    <Age>0</Age>
+  </ContactItem>
+  <ContactItem>
+    <Name>Иван</Name>
+    <Sername>Семенов</Sername>
+    <WebPage>www.ya.ru</WebPage>
+    <Age>65</Age>
+  </ContactItem>
+  <ContactItem>
+    <Name>asd</Name>
+    <Sername>sssdd</Sername>
+    <WebPage />
+    <Age>11</Age>
+  </ContactItem>
+</ArrayOfContactItem>

@@ -13,10 +13,11 @@ namespace organizer
         public string WebPage;
         public int Age;
 
-        public ContactItem()
+        public ContactItem()                                                        // пустой конструктор для сериализатора
         {
 
         }
+
         public ContactItem(string Name, string Sername, string WebPage, int Age)
         {
             this.Name = Name;

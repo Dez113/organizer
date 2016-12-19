@@ -17,11 +17,15 @@ namespace organizer
             InitializeComponent();
         }
 
+
+
+//-----------------------------------------------------------------------------------------Contacts--------------------------------------------------------------------------------//
+
+
         private void listBox_update()                                                    //обновление листбокса после изменений в ContactManager.contactlist (после добавления/удаления контакта)
         {
             listBox1.Items.Clear();
             string[] list = ContactManager.ReturnContactList();
-
 
             foreach (string line in list)
             {
@@ -70,6 +74,7 @@ namespace organizer
         private void button2_Click(object sender, EventArgs e)                           //удаление контакта
         {
             int listboxIndex = listBox1.SelectedIndex;
+
             if (listboxIndex != -1)
             {
                 ContactManager.RemoveContact(ContactManager.ReturnContactItemViaListBoxIndex(listboxIndex));
@@ -85,6 +90,7 @@ namespace organizer
         {
             string stringToFind = textBox9.Text;
             ContactItem ReturnedContact = null;
+
             if (stringToFind.Length != 0)
             {
                 ReturnedContact = ContactManager.FoundedContact(stringToFind);
@@ -101,7 +107,7 @@ namespace organizer
 
         
 
-        //---------------------------------------------------------------------------------Notes--------------------------------------------------------------------------------//
+        //--------------------------------------------------------------------------------Notes--------------------------------------------------------------------------------//
 
 
         private void UpdateNoteList()                                                   //обновление листбокса заметок
@@ -156,20 +162,18 @@ namespace organizer
             }
         }
 
-        private void OnExit(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            MessageBox.Show("пока");
-        }
+        
+        //------------------------------------------------------------------------------Serialize-------------------------------------------------------------------------//
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            ContactManager.save();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
             ContactManager.read();
             listBox_update();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии
+        {
+            ContactManager.save();
         }
     }
 }

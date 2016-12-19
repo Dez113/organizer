@@ -69,8 +69,6 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -150,7 +148,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "0";
             // 
             // textBox2
             // 
@@ -326,8 +323,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button7);
-            this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.textBox9);
             this.tabPage1.Controls.Add(this.listBox1);
@@ -494,26 +489,6 @@
             this.textBox13.Size = new System.Drawing.Size(184, 20);
             this.textBox13.TabIndex = 0;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(452, 298);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "Записать";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(533, 298);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Прочитать";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -522,6 +497,8 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -582,8 +559,6 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
     }
 }
 
