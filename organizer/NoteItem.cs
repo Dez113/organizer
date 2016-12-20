@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace organizer
 {
-    public class NoteItem
+    public class NoteItem : BaseItem
     {
         public string NoteName;
         public string NoteText;

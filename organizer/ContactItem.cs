@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace organizer
 {
-    public class ContactItem
+    public class ContactItem : BaseItem
     {
         public string Name;
         public string Sername;
