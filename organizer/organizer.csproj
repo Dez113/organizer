@@ -49,6 +49,7 @@
     <Compile Include="BaseItem.cs" />
     <Compile Include="ContactItem.cs" />
     <Compile Include="ContactManager.cs" />
+    <Compile Include="DataSave.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

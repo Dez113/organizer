@@ -167,13 +167,13 @@ namespace organizer
 
         private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
-            ContactManager.read();
+            DataSave.Restore();
             listBox_update();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии
         {
-            ContactManager.save();
+            DataSave.Save();
         }
     }
 }

@@ -8,9 +8,9 @@ namespace organizer
 {
     public class BaseItem
     {
-        public ValueType Searching (string str)
+        public void Searching (string str)
         {
-            return  items[];
+            //return  items[];
         }
     }
 }
