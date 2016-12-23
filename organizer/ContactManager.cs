@@ -9,21 +9,21 @@ namespace organizer
         private static List<ContactItem> contactList = new List<ContactItem>();
         //private static object get;
 
-        public int Count
-        {
-            get { return contactList.Count; }
-        }
-
-        public ContactItem this[int idx]
-        {
-            get
-            {
-                return contactList[idx];
-            }
-            set
-            {
-                contactList[idx] = value;
-            }
+        public int Count                                //  Так называемый индексатор https://msdn.microsoft.com/ru-ru/library/2549tw02.aspx
+        {                                               //  нужно делать class contaclist чтобы нормально работало
+            get { return contactList.Count; }           //  
+        }                                               //
+                                                        //
+        public ContactItem this[int idx]                //
+        {                                               //
+            get                                         //
+            {                                           //  
+                return contactList[idx];                //
+            }                                           //
+            set                                         //
+            {                                           //  
+                contactList[idx] = value;               //
+            }                                           //
         }
         //public static void save()                                                                       //сохранение данных (сериализация)
         //{
@@ -101,7 +101,7 @@ namespace organizer
 
             foreach (ContactItem item in contactList)
             {
-                contacts[i] = item.Name + " \t" + item.Sername + " \t" + item.Age + " \t" + item.WebPage;
+                contacts[i] = item.idx +"\t" + item.Name + " \t" + item.Sername + " \t" + item.Age + " \t" + item.WebPage;
                 i++;
             }
             return contacts;
@@ -113,7 +113,7 @@ namespace organizer
 
             foreach (ContactItem item in contactList)
             {
-                string line = item.Name + " \t" + item.Sername + " \t" + item.Age + " \t" + item.WebPage;
+                string line = item.idx + "\t" + item.Name + " \t" + item.Sername + " \t" + item.Age + " \t" + item.WebPage;
                 if (line.Contains(stringToFind))
                 {
                     toreturn = item;

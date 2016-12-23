@@ -49,7 +49,7 @@ namespace organizer
             }
             else
             {
-                ContactItem conn = new ContactItem(name, sername, webpage, age);
+                ContactItem conn = new ContactItem(name, sername, webpage, age, idx);
                 ContactManager.AddContact(conn);
                 listBox_update();
                 textBox1.Clear();
@@ -181,7 +181,7 @@ namespace organizer
             ContactManager manager = new ContactManager();
             for (int i = 0; i < manager.Count; i++)
             {
-                Console.WriteLine(i.ToString(),manager[i].ToString());
+                Console.WriteLine(i.ToString(),manager[i].Name);
             }
         }
     }

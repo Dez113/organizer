@@ -19,14 +19,21 @@ namespace organizer
 
         }
 
-        public ContactItem(string Name, string Sername, string WebPage, int Age)
+        public int idx_it(int idx)
+        {
+            return idx += 1;
+        }
+
+        public ContactItem(string Name, string Sername, string WebPage, int Age, int idx)
         {
             this.Name = Name;
             this.Sername = Sername;
             this.WebPage = WebPage;
             this.Age = Age;
-            this.idx = idx;
+            this.idx = idx_it(idx);
         }
+        
+
        
     }
 }
