@@ -11,7 +11,6 @@ namespace organizer
         public string NoteName;
         public string NoteText;
 
-
         public NoteItem (string NoteName, string NoteText)
         {
             this.NoteName = NoteName;

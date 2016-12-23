@@ -168,8 +168,8 @@ namespace organizer
 
         private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
-            DataSave.Restore();
-            listBox_update();
+            //DataSave.Restore();
+            //listBox_update();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии
@@ -177,13 +177,19 @@ namespace organizer
             DataSave.Save();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        //private void button6_Click(object sender, EventArgs e)
+        //{
+        //    ContactManager manager = new ContactManager();
+        //    for (int i = 0; i < manager.Count; i++)
+        //    {
+        //        Console.WriteLine(i.ToString(),manager[i].Name);
+        //    }
+        //}
+
+        private void seatchF3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ContactManager manager = new ContactManager();
-            for (int i = 0; i < manager.Count; i++)
-            {
-                Console.WriteLine(i.ToString(),manager[i].Name);
-            }
+            SearchForm SearchForm = new SearchForm();
+            SearchForm.Show();
         }
     }
 }

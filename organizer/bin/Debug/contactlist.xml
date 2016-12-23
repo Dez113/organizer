@@ -28,4 +28,25 @@
     <Age>0</Age>
     <idx>1</idx>
   </ContactItem>
+  <ContactItem>
+    <Name>Михаил</Name>
+    <Sername>Павлин</Sername>
+    <WebPage>ууу</WebPage>
+    <Age>54</Age>
+    <idx>1</idx>
+  </ContactItem>
+  <ContactItem>
+    <Name>Сергей</Name>
+    <Sername>Громаков</Sername>
+    <WebPage>а</WebPage>
+    <Age>13</Age>
+    <idx>1</idx>
+  </ContactItem>
+  <ContactItem>
+    <Name>Михаил </Name>
+    <Sername>Морозов</Sername>
+    <WebPage>слоав</WebPage>
+    <Age>8</Age>
+    <idx>2</idx>
+  </ContactItem>
 </ArrayOfContactItem>

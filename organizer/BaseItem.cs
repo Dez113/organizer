@@ -8,6 +8,10 @@ namespace organizer
 {
     public class BaseItem
     {
+        public void __init__()
+        {
+
+        }
         public void Searching (string str)
         {
             //return  items[];

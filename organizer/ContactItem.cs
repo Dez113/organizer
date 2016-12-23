@@ -13,16 +13,10 @@ namespace organizer
         public string WebPage;
         public int Age;
         public int idx;
-        static private int idx_counter = 0;
+        static public int idx_counter = 0;
 
         public ContactItem()                                                        // пустой конструктор для сериализатора
         {
-
-        }
-
-        public int idx_it(int idx)
-        {
-            return idx_counter += 1;
         }
 
         public ContactItem(string Name, string Sername, string WebPage, int Age, int idx)
@@ -31,10 +25,12 @@ namespace organizer
             this.Sername = Sername;
             this.WebPage = WebPage;
             this.Age = Age;
-            this.idx = idx_it(idx_counter);
+            this.idx = ++idx_counter;
         }
-        
 
-       
+        public static void update_counter(int ridx_counter)
+        {
+            idx_counter = ridx_counter;
+        }
     }
 }

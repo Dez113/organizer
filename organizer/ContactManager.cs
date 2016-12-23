@@ -9,22 +9,22 @@ namespace organizer
         private static List<ContactItem> contactList = new List<ContactItem>();
         //private static object get;
 
-        public int Count                                //  Так называемый индексатор https://msdn.microsoft.com/ru-ru/library/2549tw02.aspx
-        {                                               //  нужно делать class contaclist чтобы нормально работало
-            get { return contactList.Count; }           //  
-        }                                               //
-                                                        //
-        public ContactItem this[int idx]                //
-        {                                               //
-            get                                         //
-            {                                           //  
-                return contactList[idx];                //
-            }                                           //
-            set                                         //
-            {                                           //  
-                contactList[idx] = value;               //
-            }                                           //
-        }
+        //public int Count                                //  Так называемый индексатор https://msdn.microsoft.com/ru-ru/library/2549tw02.aspx
+        //{                                               //  нужно делать class contaclist чтобы нормально работало
+        //    get { return contactList.Count; }           //  
+        //}                                               //
+        //                                                //
+        //public ContactItem this[int idx]                //
+        //{                                               //
+        //    get                                         //
+        //    {                                           //  
+        //        return contactList[idx];                //
+        //    }                                           //
+        //    set                                         //
+        //    {                                           //  
+        //        contactList[idx] = value;               //
+        //    }                                           //
+        //}
         //public static void save()                                                                       //сохранение данных (сериализация)
         //{
         //    XmlSerializer writer = new XmlSerializer(typeof(ContactItem[]));
@@ -42,7 +42,7 @@ namespace organizer
         //    fs.Close();
         //}
 
-        public static void UpdateContactList(ContactItem[] list)                                                                       //обновление контактлиста (загрузка)
+        public static void UpdateContactList(ContactItem[] list)                                         //обновление контактлиста (загрузка)
         {
             if (list != null)
             {
