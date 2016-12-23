@@ -42,7 +42,7 @@ namespace organizer
         //    fs.Close();
         //}
 
-        public static void UpdateContactList(List<ContactItem> list)                                                                       //обновление контактлиста (загрузка)
+        public static void UpdateContactList(ContactItem[] list)                                                                       //обновление контактлиста (загрузка)
         {
             if (list != null)
             {

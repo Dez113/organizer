@@ -28,13 +28,13 @@ namespace organizer
             {
                 XmlSerializer writer = new XmlSerializer(typeof(ContactItem[]));
                 FileStream fs = new FileStream(xmlFile, FileMode.OpenOrCreate);
-                list[] = (List<ContactItem>)writer.Deserialize(fs);
+                ContactItem[] list = (ContactItem[])writer.Deserialize(fs);
                 fs.Close();
                 ContactManager.UpdateContactList(list);
             }
             else
             {
-                List<ContactItem> list = null;
+                ContactItem[] list = null;
                 ContactManager.UpdateContactList(list);
             }
             
