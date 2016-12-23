@@ -69,6 +69,7 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox13 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -323,6 +324,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.textBox9);
             this.tabPage1.Controls.Add(this.listBox1);
@@ -489,6 +491,16 @@
             this.textBox13.Size = new System.Drawing.Size(184, 20);
             this.textBox13.TabIndex = 0;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(447, 298);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "выдать";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,6 +571,7 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button button6;
     }
 }
 

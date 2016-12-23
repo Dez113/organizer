@@ -6,10 +6,25 @@ namespace organizer
     public class ContactManager
     {
         
-        private static List<ContactItem> contactList = new List<ContactItem>();                             
+        private static List<ContactItem> contactList = new List<ContactItem>();
+        //private static object get;
 
+        public int Count
+        {
+            get { return contactList.Count; }
+        }
 
-
+        public ContactItem this[int idx]
+        {
+            get
+            {
+                return contactList[idx];
+            }
+            set
+            {
+                contactList[idx] = value;
+            }
+        }
         //public static void save()                                                                       //сохранение данных (сериализация)
         //{
         //    XmlSerializer writer = new XmlSerializer(typeof(ContactItem[]));

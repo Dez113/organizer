@@ -175,6 +175,15 @@ namespace organizer
         {
             DataSave.Save();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ContactManager manager = new ContactManager();
+            for (int i = 0; i < manager.Count; i++)
+            {
+                Console.WriteLine(i.ToString(),manager[i].ToString());
+            }
+        }
     }
 }
 

@@ -12,6 +12,7 @@ namespace organizer
         public string Sername;
         public string WebPage;
         public int Age;
+        public int idx = 0;
 
         public ContactItem()                                                        // пустой конструктор для сериализатора
         {
@@ -24,6 +25,8 @@ namespace organizer
             this.Sername = Sername;
             this.WebPage = WebPage;
             this.Age = Age;
+            this.idx = idx;
         }
+       
     }
 }
