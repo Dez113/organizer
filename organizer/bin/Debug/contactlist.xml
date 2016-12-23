@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ArrayOfContactItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContactItem>
+    <Name>1</Name>
+    <Sername>2</Sername>
+    <WebPage>4</WebPage>
+    <Age>3</Age>
+    <idx>1</idx>
+  </ContactItem>
+  <ContactItem>
+    <Name>a</Name>
+    <Sername>s</Sername>
+    <WebPage>f</WebPage>
+    <Age>0</Age>
+    <idx>2</idx>
+  </ContactItem>
+  <ContactItem>
+    <Name>q</Name>
+    <Sername>w</Sername>
+    <WebPage>r</WebPage>
+    <Age>0</Age>
+    <idx>3</idx>
+  </ContactItem>
+  <ContactItem>
+    <Name>g</Name>
+    <Sername>h</Sername>
+    <WebPage>k</WebPage>
+    <Age>0</Age>
+    <idx>1</idx>
+  </ContactItem>
+</ArrayOfContactItem>

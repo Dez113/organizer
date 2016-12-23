@@ -41,6 +41,7 @@ namespace organizer
             string webpage = textBox4.Text;
             int age;
             int.TryParse(textBox3.Text, out age);
+            int idx=0;
 
 
             if (name.Length == 0 || sername.Length == 0)                                 //проверка на пустой ввод
