@@ -57,5 +57,10 @@ namespace organizer
         {
             return notelist.IndexOf(item);
         }
+
+        public static List<NoteItem> ReturnListN()
+        {
+            return notelist;
+        }
     }
 }

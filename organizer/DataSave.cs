@@ -8,19 +8,31 @@ using System.Xml.Serialization;
 
 namespace organizer
 {
-    class DataContainer : System.ComponentModel.Container
+    [Serializable]
+    public class DataContainer : System.ComponentModel.Container                               //  класс-контейнер для сериализации
     {
+        public List<ContactItem> contactlist;
+        public List<NoteItem> notelist;
+        public int idx;
+
         public DataContainer()
         {
 
         }
 
-        List<object> mainContainer = new List<object>();
+        public DataContainer(List<ContactItem> contactlist, List<NoteItem> notelist, int idx )
+        {
+            this.contactlist = ContactManager.ReturnList();
+            this.notelist = NoteManager.ReturnListN();
+            this.idx = ContactItem.idx_counter;
+        }
+
+        //List<object> mainContainer = new List<object>();
         
         
     }
 
-    class DataSave2
+    class DataSave2                                                                              // рабочий класс
     {
         public static void Save()
         {
@@ -38,7 +50,7 @@ namespace organizer
 
             if (File.Exists(xmlFile) == true)
             {
-                XmlSerializer writer = new XmlSerializer(typeof(ContactItem[]));
+                XmlSerializer writer = new XmlSerializer(typeof(ContactItem[]));                   // почему-то не получается десериализовать в тип List<ContactItem>
                 FileStream fs = new FileStream(xmlFile, FileMode.OpenOrCreate);
                 ContactItem[] list = (ContactItem[])writer.Deserialize(fs);
                 fs.Close();
@@ -56,17 +68,18 @@ namespace organizer
     {
         public static void Save()
         {
-            List<object> mainContainer = new List<object>();
-            mainContainer.Add(ContactManager.ReturnList());
-            mainContainer.Add(ContactItem.idx_counter);
+            DataContainer mainContainer1 = new DataContainer(ContactManager.ReturnList(),NoteManager.ReturnListN(),ContactItem.idx_counter);
+            //List<object> mainContainer = new List<object>();
+            //mainContainer.Add(ContactManager.ReturnList());
+            //mainContainer.Add(ContactItem.idx_counter);
 
-            XmlSerializer saver = new XmlSerializer(typeof(List<Object>));
+            XmlSerializer saver = new XmlSerializer(typeof(DataContainer));
             FileStream fs = new FileStream("test.xml", FileMode.Create);
-            saver.Serialize(fs, mainContainer);
+            saver.Serialize(fs, mainContainer1);
             fs.Close();
         }
 
-        //public static void Restore()
+        //public static void Restore()                                                             // не рабочий метод, сначала сделать метод Save 
         //{
         //    string xmlFile = @"test.xml";
 

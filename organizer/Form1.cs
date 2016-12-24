@@ -168,7 +168,7 @@ namespace organizer
 
         private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
-            //DataSave.Restore();
+            //DataSave.Restore();                                                       // потому что не работает
             //listBox_update();
         }
 
