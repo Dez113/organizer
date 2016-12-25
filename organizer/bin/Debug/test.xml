@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<DataContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <contactlist>
+    <ContactItem>
+      <_name>1</_name>
+      <_sername>2</_sername>
+      <_webpage>4</_webpage>
+      <_age>3</_age>
+      <idx>1</idx>
+    </ContactItem>
+    <ContactItem>
+      <_name>as</_name>
+      <_sername>df</_sername>
+      <_webpage>3234rrr</_webpage>
+      <_age>0</_age>
+      <idx>2</idx>
+    </ContactItem>
+    <ContactItem>
+      <_name>ldkfn</_name>
+      <_sername>ldkfnp</_sername>
+      <_webpage>dlnl</_webpage>
+      <_age>34</_age>
+      <idx>3</idx>
+    </ContactItem>
+    <ContactItem>
+      <_name>1</_name>
+      <_sername>2</_sername>
+      <_webpage>4</_webpage>
+      <_age>3</_age>
+      <idx>1</idx>
+    </ContactItem>
+  </contactlist>
+  <notelist />
+  <idx>0</idx>
+</DataContainer>

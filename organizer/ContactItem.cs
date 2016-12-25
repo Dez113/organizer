@@ -8,10 +8,10 @@ namespace organizer
 {
     public class ContactItem : BaseItem
     {
-        public string Name;
-        public string Sername;
-        public string WebPage;
-        public int Age;
+        public string _name;
+        public string _sername;
+        public string _webpage;
+        public int _age;
         public int idx;
         static public int idx_counter = 0;
 
@@ -19,18 +19,19 @@ namespace organizer
         {
         }
 
-        public ContactItem(string Name, string Sername, string WebPage, int Age, int idx)
+        public ContactItem(string name, string sername, string webpage, int age, int idx)
         {
-            this.Name = Name;
-            this.Sername = Sername;
-            this.WebPage = WebPage;
-            this.Age = Age;
-            this.idx = ++idx_counter;
+            _name = name;
+            _sername = sername;
+            _webpage = webpage;
+            _age = age;
+            idx = ++idx_counter;
         }
 
-        public static void update_counter(int ridx_counter)
+        public static void Update_Counter(int ridx_counter)
         {
             idx_counter = ridx_counter;
         }
+
     }
 }

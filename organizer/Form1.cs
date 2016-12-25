@@ -66,10 +66,10 @@ namespace organizer
             int listboxIndex = listBox1.SelectedIndex;
             ContactItem ReturnedContact;
             ReturnedContact = ContactManager.ReturnContactItemViaListBoxIndex(listboxIndex);
-            textBox5.Text = ReturnedContact.Name;
-            textBox6.Text = ReturnedContact.Sername;
-            textBox7.Text = ReturnedContact.Age.ToString();
-            textBox8.Text = ReturnedContact.WebPage;
+            textBox5.Text = ReturnedContact._name;
+            textBox6.Text = ReturnedContact._sername;
+            textBox7.Text = ReturnedContact._age.ToString();
+            textBox8.Text = ReturnedContact._webpage;
         }
 
         private void button2_Click(object sender, EventArgs e)                           //удаление контакта
@@ -98,10 +98,10 @@ namespace organizer
                 }
                 if (ReturnedContact != null)
             {
-                textBox5.Text = ReturnedContact.Name;
-                textBox6.Text = ReturnedContact.Sername;
-                textBox7.Text = ReturnedContact.Age.ToString();
-                textBox8.Text = ReturnedContact.WebPage;
+                textBox5.Text = ReturnedContact._name;
+                textBox6.Text = ReturnedContact._sername;
+                textBox7.Text = ReturnedContact._age.ToString();
+                textBox8.Text = ReturnedContact._webpage;
                 listBox1.SetSelected(ContactManager.ReturnContactIndex(ReturnedContact), true);
                 }
             }
@@ -146,8 +146,8 @@ namespace organizer
             int lstbox2index = listBox2.SelectedIndex;
             NoteItem bkmark =  NoteManager.ReturnNoteItemViaListBoxIndex(lstbox2index);
             
-            textBox11.Text = bkmark.NoteName;
-            textBox10.Text = bkmark.NoteText;
+            textBox11.Text = bkmark.notename;
+            textBox10.Text = bkmark.notetext;
         }
 
         private void button5_Click(object sender, EventArgs e)                          //удаление заметки
@@ -168,23 +168,14 @@ namespace organizer
 
         private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
-            //DataSave.Restore();                                                       // потому что не работает
-            //listBox_update();
+            DataSave.Restore();                                                       
+            listBox_update();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии
         {
             DataSave.Save();
         }
-
-        //private void button6_Click(object sender, EventArgs e)
-        //{
-        //    ContactManager manager = new ContactManager();
-        //    for (int i = 0; i < manager.Count; i++)
-        //    {
-        //        Console.WriteLine(i.ToString(),manager[i].Name);
-        //    }
-        //}
 
         private void seatchF3ToolStripMenuItem_Click(object sender, EventArgs e)
         {

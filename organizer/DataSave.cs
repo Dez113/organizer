@@ -9,27 +9,23 @@ using System.Xml.Serialization;
 namespace organizer
 {
     [Serializable]
-    public class DataContainer : System.ComponentModel.Container                               //  класс-контейнер для сериализации
+    public class DataContainer                                                          //  класс-контейнер для сериализации
     {
         public List<ContactItem> contactlist;
         public List<NoteItem> notelist;
         public int idx;
 
+        //public DataContainer()
+        //{
+
+        //}
+
         public DataContainer()
         {
-
+            contactlist = ContactManager.ReturnList();
+            notelist = NoteManager.ReturnListN();
+            idx = ContactItem.idx_counter;
         }
-
-        public DataContainer(List<ContactItem> contactlist, List<NoteItem> notelist, int idx )
-        {
-            this.contactlist = ContactManager.ReturnList();
-            this.notelist = NoteManager.ReturnListN();
-            this.idx = ContactItem.idx_counter;
-        }
-
-        //List<object> mainContainer = new List<object>();
-        
-        
     }
 
     class DataSave2                                                                              // рабочий класс
@@ -54,49 +50,50 @@ namespace organizer
                 FileStream fs = new FileStream(xmlFile, FileMode.OpenOrCreate);
                 ContactItem[] list = (ContactItem[])writer.Deserialize(fs);
                 fs.Close();
-                ContactManager.UpdateContactList(list);
+                //ContactManager.UpdateContactList(list);
             }
             else
             {
-                ContactItem[] list = null;
-                ContactManager.UpdateContactList(list);
+                //ContactItem[] list = null;
+                //ContactManager.UpdateContactList(list);
             }
         }
     }
 
-    class DataSave
+    public class DataSave
     {
         public static void Save()
         {
-            DataContainer mainContainer1 = new DataContainer(ContactManager.ReturnList(),NoteManager.ReturnListN(),ContactItem.idx_counter);
-            //List<object> mainContainer = new List<object>();
-            //mainContainer.Add(ContactManager.ReturnList());
-            //mainContainer.Add(ContactItem.idx_counter);
+            DataContainer mainContainer1 = new DataContainer();
+            //mainContainer1.contactlist = ContactManager.ReturnList();
+            //mainContainer1.notelist = NoteManager.ReturnListN();
+            //mainContainer1.idx = ContactItem.idx_counter;
 
             XmlSerializer saver = new XmlSerializer(typeof(DataContainer));
-            FileStream fs = new FileStream("test.xml", FileMode.Create);
+            FileStream fs = new FileStream("test.xml", FileMode.OpenOrCreate);
             saver.Serialize(fs, mainContainer1);
             fs.Close();
         }
 
-        //public static void Restore()                                                             // не рабочий метод, сначала сделать метод Save 
-        //{
-        //    string xmlFile = @"test.xml";
+        public static void Restore()                                                             // не рабочий метод, сначала сделать метод Save 
+        {
+            string xmlFile = @"test.xml";
 
-        //    if (File.Exists(xmlFile) == true)
-        //    {
-        //        XmlSerializer writer = new XmlSerializer(typeof(ContactItem[]));
-        //        FileStream fs = new FileStream(xmlFile, FileMode.OpenOrCreate);
-        //        List<object> list = (List<object>)writer.Deserialize(fs);
-        //        fs.Close();
-        //        ContactManager.UpdateContactList(list[0]);
-        //    }
-        //    else
-        //    {
-        //        ContactItem[] list = null;
-        //        ContactManager.UpdateContactList(list);
-        //    }
+            if (File.Exists(xmlFile) == true)
+            {
+                XmlSerializer writer = new XmlSerializer(typeof(DataContainer));
+                FileStream fs = new FileStream(xmlFile, FileMode.Open);
+                DataContainer mainContainer = (DataContainer)writer.Deserialize(fs);
+                fs.Close();
+                ContactManager.UpdateContactList(mainContainer.contactlist);
+                ContactItem.Update_Counter(mainContainer.idx);
+            }
+            //else
+            //{
+            //    ContactItem[] list = null;
+            //    ContactManager.UpdateContactList(list);
+            //}
 
-        //}
+        }
     }
 }

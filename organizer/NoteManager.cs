@@ -32,7 +32,7 @@ namespace organizer
 
             foreach(NoteItem note in notelist)
             {
-                notes[i] = note.NoteName + '\t' + note.NoteText;
+                notes[i] = note.notename + '\t' + note.notetext;
                 i++;
             }
             return notes;
@@ -43,7 +43,7 @@ namespace organizer
             NoteItem toreturn = null;
             foreach (NoteItem item in notelist)
             {
-                string line = item.NoteName + " \t" + item.NoteText;
+                string line = item.notename + " \t" + item.notetext;
                 if (line.Contains(stringToFind))
                 {
                     toreturn = item;

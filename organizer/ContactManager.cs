@@ -5,44 +5,10 @@ namespace organizer
 {
     public class ContactManager
     {
-        
         private static List<ContactItem> contactList = new List<ContactItem>();
-        //private static object get;
+        
 
-        //public int Count                                //  Так называемый индексатор https://msdn.microsoft.com/ru-ru/library/2549tw02.aspx
-        //{                                               //  нужно делать class contaclist чтобы нормально работало
-        //    get { return contactList.Count; }           //  
-        //}                                               //
-        //                                                //
-        //public ContactItem this[int idx]                //
-        //{                                               //
-        //    get                                         //
-        //    {                                           //  
-        //        return contactList[idx];                //
-        //    }                                           //
-        //    set                                         //
-        //    {                                           //  
-        //        contactList[idx] = value;               //
-        //    }                                           //
-        //}
-        //public static void save()                                                                       //сохранение данных (сериализация)
-        //{
-        //    XmlSerializer writer = new XmlSerializer(typeof(ContactItem[]));
-        //    FileStream fs = new FileStream("contactlist.xml", FileMode.Create);
-        //    ContactItem[] cons = new ContactItem[contactList.Count];
-        //    int i = 0;
-
-        //    foreach (ContactItem item in contactList)
-        //    {
-        //        cons[i] = item;
-        //        //System.Console.WriteLine(item.Name+item.Sername);
-        //        i++;
-        //    }
-        //    writer.Serialize(fs, cons);
-        //    fs.Close();
-        //}
-
-        public static void UpdateContactList(ContactItem[] list)                                         //обновление контактлиста (загрузка)
+        public static void UpdateContactList(List<ContactItem> list)                                         //обновление контактлиста (загрузка)
         {
             if (list != null)
             {
@@ -50,28 +16,7 @@ namespace organizer
                 {
                     contactList.Add(item);
                 }
-                
             }
-            
-            //string xmlFile = @"contactlist.xml";
-
-            //if (File.Exists(xmlFile) == true)
-            //{
-            //    XmlSerializer writer = new XmlSerializer(typeof(ContactItem[]));
-            //    FileStream fs = new FileStream(xmlFile, FileMode.OpenOrCreate);
-            //    ContactItem[] cons = (ContactItem[])writer.Deserialize(fs);
-            //    fs.Close();
-
-            //    for (int i = 0; i < cons.Length; i++)
-            //    {
-            //        contactList.Add(cons[i]);
-            //    }
-            //}
-            //else
-            //{
-            //    // pass
-            //}
-
         }
 
         public static void AddContact(ContactItem item)                                                 // добавление контакта
@@ -101,7 +46,7 @@ namespace organizer
 
             foreach (ContactItem item in contactList)
             {
-                contacts[i] = item.idx +"\t" + item.Name + " \t" + item.Sername + " \t" + item.Age + " \t" + item.WebPage;
+                contacts[i] = item.idx +"\t" + item._name + " \t" + item._sername + " \t" + item._age + " \t" + item._webpage;
                 i++;
             }
             return contacts;
@@ -113,7 +58,7 @@ namespace organizer
 
             foreach (ContactItem item in contactList)
             {
-                string line = item.idx + "\t" + item.Name + " \t" + item.Sername + " \t" + item.Age + " \t" + item.WebPage;
+                string line = item.idx + "\t" + item._name + " \t" + item._sername + " \t" + item._age + " \t" + item._webpage;
                 if (line.Contains(stringToFind))
                 {
                     toreturn = item;
