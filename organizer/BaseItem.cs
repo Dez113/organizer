@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace organizer
 {
+    public enum iType
+    {
+        contact,
+        note,
+        unsigned
+    }
+
     public class BaseItem
     {
-        public void __init__()
+        
+        public virtual bool IsFound (string str)
         {
-
-        }
-        public void Searching (string str)
-        {
-            
+            return false;
         }
     }
 }

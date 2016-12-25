@@ -13,6 +13,7 @@ namespace organizer
         public string _webpage;
         public int _age;
         public int idx;
+        public iType item_type;
         static public int idx_counter = 0;
 
         public ContactItem()                                                        // пустой конструктор для сериализатора
@@ -21,6 +22,7 @@ namespace organizer
 
         public ContactItem(string name, string sername, string webpage, int age, int idx)
         {
+            iType item_type = iType.contact;
             _name = name;
             _sername = sername;
             _webpage = webpage;
@@ -33,5 +35,16 @@ namespace organizer
             idx_counter = ridx_counter;
         }
 
+        public override bool IsFound(string str)
+        {
+            if (_name.Contains(str) || _sername.Contains(str))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

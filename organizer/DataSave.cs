@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace organizer
 {
     [Serializable]
-    public class DataContainer                                                          //  класс-контейнер для сериализации
+    public class DataContainer                                                                  //  класс-контейнер для сериализации
     {
         public List<ContactItem> contactlist;
         public List<NoteItem> notelist;

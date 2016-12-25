@@ -10,6 +10,7 @@ namespace organizer
     {
         public string notename;
         public string notetext;
+        public iType item_type;
 
         public NoteItem()
         {
@@ -17,6 +18,7 @@ namespace organizer
         }
         public NoteItem (string NoteName, string NoteText)
         {
+            iType item_type = iType.note;
             this.notename = NoteName;
             this.notetext = NoteText;
         }

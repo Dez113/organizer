@@ -29,7 +29,21 @@
       <_age>3</_age>
       <idx>1</idx>
     </ContactItem>
+    <ContactItem>
+      <_name>1</_name>
+      <_sername>2</_sername>
+      <_webpage>4</_webpage>
+      <_age>3</_age>
+      <idx>1</idx>
+    </ContactItem>
+    <ContactItem>
+      <_name>34</_name>
+      <_sername>554</_sername>
+      <_webpage />
+      <_age>0</_age>
+      <idx>0</idx>
+    </ContactItem>
   </contactlist>
   <notelist />
-  <idx>0</idx>
+  <idx>1</idx>
 </DataContainer>
