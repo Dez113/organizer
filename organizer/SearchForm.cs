@@ -16,5 +16,13 @@ namespace organizer
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string stringToFind = textBox1.Text;
+
+            // дописать функцию поиска (поиск во всех элементах списков, преобразуя их к классу BaseItem)
+
+        }
     }
 }
