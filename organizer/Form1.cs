@@ -41,7 +41,7 @@ namespace organizer
             string webpage = textBox4.Text;
             int age;
             int.TryParse(textBox3.Text, out age);
-            int idx=0;
+            int idx = ContactItem.idx_counter;
 
 
             if (name.Length == 0 || sername.Length == 0)                                 //проверка на пустой ввод
@@ -64,12 +64,15 @@ namespace organizer
         public void listBox1_SelectedIndexChanged(object sender, EventArgs e)            // замена информации о выбранном контакте в групбокс2
         {
             int listboxIndex = listBox1.SelectedIndex;
-            ContactItem ReturnedContact;
-            ReturnedContact = ContactManager.ReturnContactItemViaListBoxIndex(listboxIndex);
-            textBox5.Text = ReturnedContact._name;
-            textBox6.Text = ReturnedContact._sername;
-            textBox7.Text = ReturnedContact._age.ToString();
-            textBox8.Text = ReturnedContact._webpage;
+            if (listboxIndex != -1)
+            {
+                ContactItem ReturnedContact = ContactManager.ReturnContactItemViaListBoxIndex(listboxIndex);
+                textBox5.Text = ReturnedContact._name;
+                textBox6.Text = ReturnedContact._sername;
+                textBox7.Text = ReturnedContact._age.ToString();
+                textBox8.Text = ReturnedContact._webpage;
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)                           //удаление контакта

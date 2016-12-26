@@ -13,7 +13,7 @@ namespace organizer
     {
         public List<ContactItem> contactlist;
         public List<NoteItem> notelist;
-        public int idx;
+        public int idx_counter;
 
         //public DataContainer()
         //{
@@ -24,7 +24,7 @@ namespace organizer
         {
             contactlist = ContactManager.ReturnList();
             notelist = NoteManager.ReturnListN();
-            idx = ContactItem.idx_counter;
+            idx_counter = ContactItem.idx_counter;
         }
     }
 
@@ -70,7 +70,7 @@ namespace organizer
             //mainContainer1.idx = ContactItem.idx_counter;
 
             XmlSerializer saver = new XmlSerializer(typeof(DataContainer));
-            FileStream fs = new FileStream("test.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("test.xml", FileMode.Create);
             saver.Serialize(fs, mainContainer1);
             fs.Close();
         }
@@ -86,7 +86,7 @@ namespace organizer
                 DataContainer mainContainer = (DataContainer)writer.Deserialize(fs);
                 fs.Close();
                 ContactManager.UpdateContactList(mainContainer.contactlist);
-                ContactItem.Update_Counter(mainContainer.idx);
+                ContactItem.Update_Counter(mainContainer.idx_counter);
             }
             //else
             //{

@@ -2,48 +2,38 @@
 <DataContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <contactlist>
     <ContactItem>
-      <_name>1</_name>
-      <_sername>2</_sername>
-      <_webpage>4</_webpage>
-      <_age>3</_age>
-      <idx>1</idx>
+      <_name>f</_name>
+      <_sername>f</_sername>
+      <_webpage />
+      <_age>1</_age>
+      <_idx>0</_idx>
+      <item_type>contact</item_type>
     </ContactItem>
     <ContactItem>
-      <_name>as</_name>
-      <_sername>df</_sername>
-      <_webpage>3234rrr</_webpage>
-      <_age>0</_age>
-      <idx>2</idx>
-    </ContactItem>
-    <ContactItem>
-      <_name>ldkfn</_name>
-      <_sername>ldkfnp</_sername>
-      <_webpage>dlnl</_webpage>
-      <_age>34</_age>
-      <idx>3</idx>
-    </ContactItem>
-    <ContactItem>
-      <_name>1</_name>
-      <_sername>2</_sername>
-      <_webpage>4</_webpage>
-      <_age>3</_age>
-      <idx>1</idx>
-    </ContactItem>
-    <ContactItem>
-      <_name>1</_name>
-      <_sername>2</_sername>
-      <_webpage>4</_webpage>
-      <_age>3</_age>
-      <idx>1</idx>
-    </ContactItem>
-    <ContactItem>
-      <_name>34</_name>
-      <_sername>554</_sername>
+      <_name>f</_name>
+      <_sername>f</_sername>
       <_webpage />
       <_age>0</_age>
-      <idx>0</idx>
+      <_idx>1</_idx>
+      <item_type>contact</item_type>
+    </ContactItem>
+    <ContactItem>
+      <_name>f</_name>
+      <_sername>f</_sername>
+      <_webpage />
+      <_age>0</_age>
+      <_idx>2</_idx>
+      <item_type>contact</item_type>
+    </ContactItem>
+    <ContactItem>
+      <_name>we</_name>
+      <_sername>wr</_sername>
+      <_webpage />
+      <_age>155</_age>
+      <_idx>3</_idx>
+      <item_type>contact</item_type>
     </ContactItem>
   </contactlist>
   <notelist />
-  <idx>1</idx>
+  <idx_counter>4</idx_counter>
 </DataContainer>

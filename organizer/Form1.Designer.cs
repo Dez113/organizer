@@ -545,7 +545,7 @@
             // searchF3ToolStripMenuItem
             // 
             this.searchF3ToolStripMenuItem.Name = "searchF3ToolStripMenuItem";
-            this.searchF3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchF3ToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.searchF3ToolStripMenuItem.Text = "Search (F3)";
             this.searchF3ToolStripMenuItem.Click += new System.EventHandler(this.seatchF3ToolStripMenuItem_Click);
             // 

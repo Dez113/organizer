@@ -12,10 +12,12 @@ namespace organizer
         {
             if (list != null)
             {
-                foreach (ContactItem item in list)//for (int i=0; i < list.Count; i++)
-                {
-                    contactList.Add(item);
-                }
+                List<ContactItem> contactList = new List<ContactItem> (list);                               //листбокс заполняется нормально  (ТАК МОЖНО????)
+                //foreach (ContactItem item in list)//for (int i=0; i < list.Count; i++)                      //листбокс не заполняется сразу
+                //{
+                //    contactList.Add(item);
+                //}
+                
             }
         }
 
@@ -31,7 +33,11 @@ namespace organizer
 
         public static ContactItem ReturnContactItemViaListBoxIndex(int index)                           //возвращает объект по индексу (индекс приходит из контролера)
         {
-            return (contactList[index]);
+            if (index != -1)
+            {
+                return (contactList[index]);
+            }
+            return null;
         }
 
         public static List<ContactItem> ReturnList ()
@@ -46,7 +52,7 @@ namespace organizer
 
             foreach (ContactItem item in contactList)
             {
-                contacts[i] = item.idx +"\t" + item._name + " \t" + item._sername + " \t" + item._age + " \t" + item._webpage;
+                contacts[i] = item._idx +"\t" + item._name + " \t" + item._sername + " \t" + item._age + " \t" + item._webpage;
                 i++;
             }
             return contacts;
@@ -58,7 +64,7 @@ namespace organizer
 
             foreach (ContactItem item in contactList)
             {
-                string line = item.idx + "\t" + item._name + " \t" + item._sername + " \t" + item._age + " \t" + item._webpage;
+                string line = item._idx + "\t" + item._name + " \t" + item._sername + " \t" + item._age + " \t" + item._webpage;
                 if (line.Contains(stringToFind))
                 {
                     toreturn = item;
