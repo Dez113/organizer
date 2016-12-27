@@ -14,6 +14,8 @@ namespace organizer
         public List<ContactItem> contactlist;
         public List<NoteItem> notelist;
         public int idx_counter;
+        private IDictionary<string, object> dict;
+        public delegate void OnSaveData(ref IDictionary<string, object> dict);
 
         public DataContainer()
         {
@@ -28,6 +30,14 @@ namespace organizer
             {
                 idx_counter = ContactItem.idx_counter;
             }
+        }
+
+        public IDictionary<string, object> BuildDict()
+        {
+            dict.Add("contacts", ContactManager.ReturnList());
+            dict.Add("contacts_idx", ContactItem.idx_counter);
+            dict.Add("notes", NoteManager.ReturnListN());
+            return dict;
         }
     }
 
