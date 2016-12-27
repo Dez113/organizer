@@ -62,5 +62,11 @@ namespace organizer
         {
             return notelist;
         }
+
+        public static void UpdateNoteList (List<NoteItem> list)
+        {
+            List<NoteItem> notelist = new List<NoteItem>(list);
+
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace organizer
 //-----------------------------------------------------------------------------------------Contacts--------------------------------------------------------------------------------//
 
 
-        private void listBox_update()                                                    //обновление листбокса после изменений в ContactManager.contactlist (после добавления/удаления контакта)
+        private void UpdateContactListBox()                                                    //обновление листбокса после изменений в ContactManager.contactlist (после добавления/удаления контакта)
         {
             listBox1.Items.Clear();
             string[] list = ContactManager.ReturnContactList();
@@ -52,7 +52,7 @@ namespace organizer
             {
                 ContactItem conn = new ContactItem(name, sername, webpage, age, idx);
                 ContactManager.AddContact(conn);
-                listBox_update();
+                UpdateContactListBox();
                 textBox1.Clear();
                 textBox2.Clear();
                 textBox3.Clear();
@@ -72,7 +72,6 @@ namespace organizer
                 textBox7.Text = ReturnedContact._age.ToString();
                 textBox8.Text = ReturnedContact._webpage;
             }
-            
         }
 
         private void button2_Click(object sender, EventArgs e)                           //удаление контакта
@@ -82,7 +81,7 @@ namespace organizer
             if (listboxIndex != -1)
             {
                 ContactManager.RemoveContact(ContactManager.ReturnContactItemViaListBoxIndex(listboxIndex));
-                listBox_update();
+                UpdateContactListBox();
                 textBox5.Clear();
                 textBox6.Clear();
                 textBox7.Clear();
@@ -147,10 +146,13 @@ namespace organizer
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)          //обновление заметки в групбоксе
         {
             int lstbox2index = listBox2.SelectedIndex;
-            NoteItem bkmark =  NoteManager.ReturnNoteItemViaListBoxIndex(lstbox2index);
-            
-            textBox11.Text = bkmark.notename;
-            textBox10.Text = bkmark.notetext;
+            if (lstbox2index != -1)
+            {
+                NoteItem bkmark = NoteManager.ReturnNoteItemViaListBoxIndex(lstbox2index);
+
+                textBox11.Text = bkmark.notename;
+                textBox10.Text = bkmark.notetext;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)                          //удаление заметки
@@ -172,7 +174,8 @@ namespace organizer
         private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
             DataSave.Restore();                                                       
-            listBox_update();
+            UpdateContactListBox();
+            UpdateNoteList();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии

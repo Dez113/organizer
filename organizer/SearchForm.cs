@@ -17,12 +17,38 @@ namespace organizer
             InitializeComponent();
         }
 
+        private List<BaseItem> Find (string stringToFind)
+        {
+            List<BaseItem> list = new List<BaseItem>();
+
+            foreach (ContactItem item in ContactManager.ReturnList())
+            {
+                if (item.IsFound(stringToFind) == true)
+                {
+                    list.Add(item);
+                }
+            }
+            foreach (NoteItem itemN in NoteManager.ReturnListN())
+            {
+                if (itemN.IsFound(stringToFind) == true)
+                {
+                    list.Add(itemN);
+                }
+            }
+            return list;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             string stringToFind = textBox1.Text;
+            List<BaseItem> allFounded = Find(stringToFind);
+            listBox1.Items.Clear();
 
-            // дописать функцию поиска (поиск во всех элементах списков, преобразуя их к классу BaseItem)
-
+            foreach (BaseItem item in allFounded)
+            {
+                listBox1.Items.Add(item.ToString());
+            }
         }
     }
 }
+

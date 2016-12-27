@@ -2,38 +2,59 @@
 <DataContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <contactlist>
     <ContactItem>
-      <_name>f</_name>
-      <_sername>f</_sername>
+      <_name>asd</_name>
+      <_sername>asd</_sername>
       <_webpage />
-      <_age>1</_age>
+      <_age>0</_age>
       <_idx>0</_idx>
       <item_type>contact</item_type>
     </ContactItem>
     <ContactItem>
-      <_name>f</_name>
-      <_sername>f</_sername>
+      <_name>asd</_name>
+      <_sername>sd</_sername>
       <_webpage />
       <_age>0</_age>
       <_idx>1</_idx>
       <item_type>contact</item_type>
     </ContactItem>
     <ContactItem>
-      <_name>f</_name>
-      <_sername>f</_sername>
+      <_name>Иван</_name>
+      <_sername>1233</_sername>
       <_webpage />
       <_age>0</_age>
       <_idx>2</_idx>
       <item_type>contact</item_type>
     </ContactItem>
     <ContactItem>
-      <_name>we</_name>
-      <_sername>wr</_sername>
+      <_name>Сергей</_name>
+      <_sername>Иванов</_sername>
       <_webpage />
-      <_age>155</_age>
+      <_age>134</_age>
       <_idx>3</_idx>
       <item_type>contact</item_type>
     </ContactItem>
   </contactlist>
-  <notelist />
+  <notelist>
+    <NoteItem>
+      <notename>Note1</notename>
+      <notetext>lskjdfhn;sjdn';skljdnc;sjdnc;</notetext>
+      <item_type>contact</item_type>
+    </NoteItem>
+    <NoteItem>
+      <notename>Note2</notename>
+      <notetext>dlkf;socvh[sjnv</notetext>
+      <item_type>contact</item_type>
+    </NoteItem>
+    <NoteItem>
+      <notename>Иван</notename>
+      <notetext>Иванов</notetext>
+      <item_type>contact</item_type>
+    </NoteItem>
+    <NoteItem>
+      <notename>Иванюк</notename>
+      <notetext>Позвонить!</notetext>
+      <item_type>contact</item_type>
+    </NoteItem>
+  </notelist>
   <idx_counter>4</idx_counter>
 </DataContainer>

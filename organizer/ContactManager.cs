@@ -8,12 +8,12 @@ namespace organizer
         private static List<ContactItem> contactList = new List<ContactItem>();
         
 
-        public static void UpdateContactList(List<ContactItem> list)                                         //обновление контактлиста (загрузка)
+        public static void UpdateContactList(List<ContactItem> list)                                    //обновление контактлиста (загрузка)
         {
             if (list != null)
             {
-                List<ContactItem> contactList = new List<ContactItem> (list);                               //листбокс заполняется нормально  (ТАК МОЖНО????)
-                //foreach (ContactItem item in list)//for (int i=0; i < list.Count; i++)                      //листбокс не заполняется сразу
+                List<ContactItem> contactList = new List<ContactItem> (list);                           //листбокс заполняется нормально  (ТАК МОЖНО????)
+                //foreach (ContactItem item in list)//for (int i=0; i < list.Count; i++)                //листбокс не заполняется сразу
                 //{
                 //    contactList.Add(item);
                 //}

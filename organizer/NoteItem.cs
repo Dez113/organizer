@@ -22,5 +22,15 @@ namespace organizer
             this.notename = NoteName;
             this.notetext = NoteText;
         }
+
+        public override bool IsFound(string str)
+        {
+            if (notename.Contains(str))
+            {
+                return true;
+            }
+            return false;
+            
+        }
     }
 }
