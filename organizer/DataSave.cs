@@ -8,38 +8,38 @@ using System.Xml.Serialization;
 
 namespace organizer
 {
-    [Serializable]
-    public class DataContainer                                                                  //  класс-контейнер для сериализации
-    {
-        public List<ContactItem> contactlist;
-        public List<NoteItem> notelist;
-        public int idx_counter;
+    //[Serializable]
+    //public class DataContainer                                                                  //  класс-контейнер для сериализации
+    //{
+    //    public List<ContactItem> contactlist;
+    //    public List<NoteItem> notelist;
+    //    public int idx_counter;
 
-        
 
-        public DataContainer()
-        {
-            contactlist = ContactManager.ReturnList();
-            notelist = NoteManager.ReturnListN();
 
-            if (contactlist.Count == 0)                                                         // если список контактов пуст сериализируется idx_counter=0
-            {
-                idx_counter = 0;
-            }
-            else
-            {
-                idx_counter = ContactItem.idx_counter;
-            }
-        }
+    //    public DataContainer()
+    //    {
+    //        contactlist = ContactManager.ReturnList();
+    //        notelist = NoteManager.ReturnListN();
 
-        //public IDictionary<string, object> BuildDict()
-        //{
-        //    dict.Add("contacts", ContactManager.ReturnList());
-        //    dict.Add("contacts_idx", ContactItem.idx_counter);
-        //    dict.Add("notes", NoteManager.ReturnListN());
-        //    return dict;
-        //}
-    }
+    //        if (contactlist.Count == 0)                                                         // если список контактов пуст сериализируется idx_counter=0
+    //        {
+    //            idx_counter = 0;
+    //        }
+    //        else
+    //        {
+    //            idx_counter = ContactItem.idx_counter;
+    //        }
+    //    }
+
+    //public IDictionary<string, object> BuildDict()
+    //{
+    //    dict.Add("contacts", ContactManager.ReturnList());
+    //    dict.Add("contacts_idx", ContactItem.idx_counter);
+    //    dict.Add("notes", NoteManager.ReturnListN());
+    //    return dict;
+    //}
+    //}
 
     //class DataSave2                                                                              // рабочий класс
     //{
@@ -75,37 +75,48 @@ namespace organizer
 
     public class DataSave
     {
-        public static IDictionary<string, object> dict;
-
-        public delegate void DataSaving();//ref IDictionary<string, object> dict);
+        public static Dictionary<string, object> dict = new Dictionary<string, object>();
+        //onSave(ref dict)
+        public delegate void DataSaving(ref Dictionary<string, object> dict);
         public static DataSaving onSave;
 
-
-
-        //public static 
-        //public static void Save()
-        //{
-        //    DataContainer mainContainer1 = new DataContainer();
-        //    XmlSerializer saver = new XmlSerializer(typeof(DataContainer));
-        //    FileStream fs = new FileStream("test.xml", FileMode.Create);
-        //    saver.Serialize(fs, mainContainer1);
-        //    fs.Close();
-        //}
-
-        public static void Restore()                                                             // не рабочий метод, сначала сделать метод Save 
+        public static void Save()
         {
-            string xmlFile = @"test.xml";
+            onSave(ref dict);
+            XmlSerializer saver = new XmlSerializer(typeof(Dictionary<string, object>));
+            FileStream fs = new FileStream("test1.xml", FileMode.Create);
+            saver.Serialize(fs, dict);
+            fs.Close();
+            
 
-            if (File.Exists(xmlFile) == true)
-            {
-                XmlSerializer writer = new XmlSerializer(typeof(DataContainer));
-                FileStream fs = new FileStream(xmlFile, FileMode.Open);
-                DataContainer mainContainer = (DataContainer)writer.Deserialize(fs);
-                fs.Close();
-                ContactManager.UpdateContactList(mainContainer.contactlist);
-                ContactItem.Update_Counter(mainContainer.idx_counter);
-                NoteManager.UpdateNoteList(mainContainer.notelist);
-            }
         }
     }
 }
+    
+
+
+    //public static void Save()
+    //{
+    //    DataContainer mainContainer1 = new DataContainer();
+    //    XmlSerializer saver = new XmlSerializer(typeof(DataContainer));
+    //    FileStream fs = new FileStream("test.xml", FileMode.Create);
+    //    saver.Serialize(fs, mainContainer1);
+    //    fs.Close();
+    //}
+
+    //public static void Restore()                                                             // не рабочий метод, сначала сделать метод Save 
+    //    {
+    //        string xmlFile = @"test.xml";
+
+    //        if (File.Exists(xmlFile) == true)
+    //        {
+    //            XmlSerializer writer = new XmlSerializer(typeof(DataContainer));
+    //            FileStream fs = new FileStream(xmlFile, FileMode.Open);
+    //            DataContainer mainContainer = (DataContainer)writer.Deserialize(fs);
+    //            fs.Close();
+    //            ContactManager.UpdateContactList(mainContainer.contactlist);
+    //            ContactItem.Update_Counter(mainContainer.idx_counter);
+    //            NoteManager.UpdateNoteList(mainContainer.notelist);
+    //        }
+    //    }
+    //}

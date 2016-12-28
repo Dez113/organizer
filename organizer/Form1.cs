@@ -176,16 +176,18 @@ namespace organizer
 
         private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
-            DataSave.Restore();                                                       
-            UpdateContactListBox();
-            UpdateNoteList();
+            //DataSave.Restore();                                                       
+            //UpdateContactListBox();
+            //UpdateNoteList();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии
         {
             //DataSave.Save();
             DataSave.onSave();
-            DataSave.onSave += ContactManager.DataSaving();
+            DataSave.onSave += ContactManager.DataSaving;
+            DataSave.onSave += ContactItem.SaveIdx;
+            DataSave.onSave += NoteManager.SaveNotes;
         }
 
         private void seatchF3ToolStripMenuItem_Click(object sender, EventArgs e)
