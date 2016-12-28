@@ -180,7 +180,8 @@ namespace organizer
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии
         {
-            DataSave.Save();
+            //DataSave.Save();
+            DataContainer.DataSaving OnSave();
         }
 
         private void seatchF3ToolStripMenuItem_Click(object sender, EventArgs e)

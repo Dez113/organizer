@@ -68,5 +68,10 @@ namespace organizer
             List<NoteItem> notelist = new List<NoteItem>(list);
 
         }
+
+        public static void SaveNotes()
+        {
+            DataContainer.dict.Add("notes", notelist);
+        }
     }
 }

@@ -48,5 +48,10 @@ namespace organizer
                 return false;
             }
         }
+
+        public static void SaveIdx()
+        {
+            DataContainer.dict.Add("contact_idx", idx_counter);
+        }
     }
 }

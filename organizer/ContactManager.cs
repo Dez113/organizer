@@ -78,6 +78,11 @@ namespace organizer
         {
             return contactList.IndexOf(item);
         }
+
+        public static void SaveContacts()
+        {
+            DataContainer.dict.Add("contacts", contactList);
+        }
     }
 }
 
