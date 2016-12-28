@@ -15,10 +15,7 @@ namespace organizer
         public List<NoteItem> notelist;
         public int idx_counter;
 
-        public static IDictionary<string, object> dict;
-
-        public delegate void DataSaving(ref IDictionary<string, object> dict);
-        public event DataSaving onSave;
+        
 
         public DataContainer()
         {
@@ -78,14 +75,22 @@ namespace organizer
 
     public class DataSave
     {
-        public static void Save()
-        {
-            DataContainer mainContainer1 = new DataContainer();
-            XmlSerializer saver = new XmlSerializer(typeof(DataContainer));
-            FileStream fs = new FileStream("test.xml", FileMode.Create);
-            saver.Serialize(fs, mainContainer1);
-            fs.Close();
-        }
+        public static IDictionary<string, object> dict;
+
+        public delegate void DataSaving();//ref IDictionary<string, object> dict);
+        public static DataSaving onSave;
+
+
+
+        //public static 
+        //public static void Save()
+        //{
+        //    DataContainer mainContainer1 = new DataContainer();
+        //    XmlSerializer saver = new XmlSerializer(typeof(DataContainer));
+        //    FileStream fs = new FileStream("test.xml", FileMode.Create);
+        //    saver.Serialize(fs, mainContainer1);
+        //    fs.Close();
+        //}
 
         public static void Restore()                                                             // не рабочий метод, сначала сделать метод Save 
         {

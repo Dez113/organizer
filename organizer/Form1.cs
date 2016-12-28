@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static organizer.DataSave;
 
 namespace organizer
 {
@@ -15,6 +16,8 @@ namespace organizer
         public MainForm()
         {
             InitializeComponent();
+            
+           
         }
 
 
@@ -181,7 +184,8 @@ namespace organizer
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии
         {
             //DataSave.Save();
-            DataContainer.DataSaving OnSave();
+            DataSave.onSave();
+            DataSave.onSave += ContactManager.DataSaving();
         }
 
         private void seatchF3ToolStripMenuItem_Click(object sender, EventArgs e)

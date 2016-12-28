@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+//using static organizer.DataSave;
 
 namespace organizer
 {
@@ -7,6 +7,8 @@ namespace organizer
     {
         private static List<ContactItem> contactList = new List<ContactItem>();
         
+
+        //DataSave.onSave += DataSaving();
 
         public static void UpdateContactList(List<ContactItem> list)                                    //обновление контактлиста (загрузка)
         {
@@ -79,9 +81,9 @@ namespace organizer
             return contactList.IndexOf(item);
         }
 
-        public static void SaveContacts()
+        public static void DataSaving()
         {
-            DataContainer.dict.Add("contacts", contactList);
+            DataSave.dict.Add("contacts", contactList);
         }
     }
 }
