@@ -16,7 +16,7 @@ namespace organizer
         public iType item_type;
         public static int idx_counter = 0;
 
-        public ContactItem()                                                        // пустой конструктор для сериализатора
+        public ContactItem()                                                                // пустой конструктор для сериализатора
         {
         }
 
@@ -51,7 +51,7 @@ namespace organizer
 
         public static void SaveIdx()
         {
-            DataContainer.dict.Add("contact_idx", idx_counter);
+            DataSave.dict.Add("contact_idx", idx_counter);
         }
     }
 }
