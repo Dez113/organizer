@@ -71,7 +71,7 @@ namespace organizer
 
         public static void SaveNotes()
         {
-            DataContainer.dict.Add("notes", notelist);
+            DataSave.dict.Add("notes", notelist);
         }
     }
 }
