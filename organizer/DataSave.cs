@@ -87,8 +87,6 @@ namespace organizer
             FileStream fs = new FileStream("test1.xml", FileMode.Create);
             saver.Serialize(fs, dict);
             fs.Close();
-            
-
         }
     }
 }
