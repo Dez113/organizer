@@ -76,6 +76,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchF3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -329,11 +334,12 @@
             this.tabControl1.Location = new System.Drawing.Point(2, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(770, 607);
+            this.tabControl1.Size = new System.Drawing.Size(770, 791);
             this.tabControl1.TabIndex = 15;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.listView1);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.textBox9);
             this.tabPage1.Controls.Add(this.listBox1);
@@ -343,7 +349,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(762, 581);
+            this.tabPage1.Size = new System.Drawing.Size(762, 765);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Контакты";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -549,11 +555,45 @@
             this.searchF3ToolStripMenuItem.Text = "Search (F3)";
             this.searchF3ToolStripMenuItem.Click += new System.EventHandler(this.seatchF3ToolStripMenuItem_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listView1.FullRowSelect = true;
+            this.listView1.Location = new System.Drawing.Point(32, 569);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(703, 193);
+            this.listView1.TabIndex = 15;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 139;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Sername";
+            this.columnHeader2.Width = 147;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Age";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "www";
+            this.columnHeader4.Width = 279;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 640);
+            this.ClientSize = new System.Drawing.Size(774, 834);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.tabControl1);
@@ -633,6 +673,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchF3ToolStripMenuItem;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
 

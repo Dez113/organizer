@@ -77,12 +77,12 @@ namespace organizer
     {
         public static Dictionary<string, object> dict = new Dictionary<string, object>();
         //onSave(ref dict)
-        public delegate void DataSaving(ref Dictionary<string, object> dict);
+        public delegate void DataSaving();//ref Dictionary<string, object> dict);
         public static DataSaving onSave;
 
         public static void Save()
         {
-            onSave(ref dict);
+            //onSave(ref dict);
             XmlSerializer saver = new XmlSerializer(typeof(Dictionary<string, object>));
             FileStream fs = new FileStream("test1.xml", FileMode.Create);
             saver.Serialize(fs, dict);
