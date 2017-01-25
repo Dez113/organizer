@@ -38,7 +38,7 @@ namespace organizer
             return list;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)                          // поиск в контактах и заметках
         {
             string stringToFind = textBox1.Text;
             List<BaseItem> allFounded = Find(stringToFind);
@@ -46,7 +46,23 @@ namespace organizer
 
             foreach (BaseItem item in allFounded)
             {
-                listBox1.Items.Add(item.ToString());
+                //if (item.GetType().ToString().Contains("Contact"))
+                //{
+                //    ContactItem cItem = (ContactItem)item;                  //   приведение типа работает для всех пследующих значений.......
+                //    listBox1.Items.Add(cItem.item_type + "\t" + cItem._name + "\t" + cItem._sername);
+                //}
+                //else
+                //{
+                //    if (item.GetType().ToString().Contains("Note"))
+                //    {
+                //        NoteItem nItem = (NoteItem)item;
+                //        listBox1.Items.Add(nItem.item_type + "\t" + nItem.notename + "\t" + nItem.notetext);
+                //        Console.WriteLine(nItem.item_type);
+                //    }
+
+                //}
+
+                listBox1.Items.Add(item.GetType());   //выводит правильные типы
             }
         }
     }

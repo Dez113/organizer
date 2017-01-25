@@ -15,7 +15,6 @@ namespace organizer
 
     public class BaseItem
     {
-        
         public virtual bool IsFound (string str)
         {
             return false;
