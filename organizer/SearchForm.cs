@@ -48,7 +48,7 @@ namespace organizer
             {
                 //if (item.GetType().ToString().Contains("Contact"))
                 //{
-                //    ContactItem cItem = (ContactItem)item;                  //   приведение типа работает для всех пследующих значений.......
+                //    ContactItem cItem = (ContactItem)item;                            //   приведение типа работает для всех пследующих значений.......
                 //    listBox1.Items.Add(cItem.item_type + "\t" + cItem._name + "\t" + cItem._sername);
                 //}
                 //else

@@ -28,13 +28,25 @@ namespace organizer
         private void UpdateContactListBox()                                                    //обновление листбокса после изменений в ContactManager.contactlist (после добавления/удаления контакта)
         {
             listBox1.Items.Clear();
+            listView1.Items.Clear();
             string[] list = ContactManager.ReturnContactList();
+            List<ContactItem> contacts = ContactManager.ReturnList();
 
             foreach (string line in list)
             {
                 System.Console.WriteLine(line);
                 listBox1.Items.Add(line);
+
+                
             }
+            foreach (ContactItem contact in contacts)
+            {
+                string[] row = { contact._name, contact._sername, contact._age.ToString(), contact._webpage };
+                var ListViewitem = new ListViewItem ( row );
+                listView1.Items.Add(ListViewitem);
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)                           //добавление контакта
