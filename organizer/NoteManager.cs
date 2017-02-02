@@ -32,7 +32,7 @@ namespace organizer
 
             foreach(NoteItem note in notelist)
             {
-                notes[i] = note.notename + '\t' + note.notetext;
+                notes[i] = note.notename + '\t' + note.notetext + '\t' + note.item_type;
                 i++;
             }
             return notes;

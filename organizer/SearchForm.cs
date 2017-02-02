@@ -26,6 +26,7 @@ namespace organizer
                 if (item.IsFound(stringToFind) == true)
                 {
                     list.Add(item);
+                    Console.WriteLine(item.item_type);
                 }
             }
             foreach (NoteItem itemN in NoteManager.ReturnListN())
@@ -33,6 +34,7 @@ namespace organizer
                 if (itemN.IsFound(stringToFind) == true)
                 {
                     list.Add(itemN);
+                    Console.WriteLine(itemN.item_type);
                 }
             }
             return list;
@@ -46,23 +48,23 @@ namespace organizer
 
             foreach (BaseItem item in allFounded)
             {
-                //if (item.GetType().ToString().Contains("Contact"))
-                //{
-                //    ContactItem cItem = (ContactItem)item;                            //   приведение типа работает для всех пследующих значений.......
-                //    listBox1.Items.Add(cItem.item_type + "\t" + cItem._name + "\t" + cItem._sername);
-                //}
-                //else
-                //{
-                //    if (item.GetType().ToString().Contains("Note"))
-                //    {
-                //        NoteItem nItem = (NoteItem)item;
-                //        listBox1.Items.Add(nItem.item_type + "\t" + nItem.notename + "\t" + nItem.notetext);
-                //        Console.WriteLine(nItem.item_type);
-                //    }
+                if (item.GetType().ToString().Contains("ContactItem"))
+                {
+                    ContactItem cItem = (ContactItem)item;                            //   приведение типа работает для всех пследующих значений.......
+                    listBox1.Items.Add(cItem.GetType().ToString() + "\t" + cItem._name + "\t" + cItem._sername);
+                }
+                else
+                {
+                    if (item.GetType().ToString().Contains("NoteItem"))
+                    {
+                        NoteItem nItem = (NoteItem)item;
+                        listBox1.Items.Add(nItem.GetType().ToString() + "\t" + nItem.notename + "\t" + nItem.notetext);
+                        Console.WriteLine(nItem.item_type);
+                    }
 
-                //}
+                }
 
-                listBox1.Items.Add(item.GetType());   //выводит правильные типы
+                //listBox1.Items.Add(item.GetType());   //выводит правильные типы
             }
         }
     }
