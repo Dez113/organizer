@@ -22,7 +22,7 @@ namespace organizer
 
         public ContactItem(string name, string sername, string webpage, int age, int idx)
         {
-            iType item_type = iType.contact;
+            item_type = iType.contact;
             _name = name;
             _sername = sername;
             _webpage = webpage;

@@ -18,7 +18,7 @@ namespace organizer
         }
         public NoteItem (string NoteName, string NoteText)
         {
-            iType item_type = iType.note;
+            item_type = iType.note;
             this.notename = NoteName;
             this.notetext = NoteText;
         }
