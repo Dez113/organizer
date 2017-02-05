@@ -16,8 +16,9 @@ namespace organizer
         public iType item_type;
         public static int idx_counter = 0;
 
-        public ContactItem()                                                                // пустой конструктор для сериализатора
+        static ContactItem()                                                                // пустой конструктор для сериализатора
         {
+            DataSave.onSave += SaveIdx;
         }
 
         public ContactItem(string name, string sername, string webpage, int age, int idx)
@@ -32,10 +33,10 @@ namespace organizer
         }
 
       
-        public static void Update_Counter(int read_idx_counter)
-        {
-            idx_counter = read_idx_counter;
-        }
+        //public static void Update_Counter(int read_idx_counter)
+        //{
+        //    idx_counter = read_idx_counter;
+        //}
 
         public override bool IsFound(string str)
         {
@@ -49,9 +50,9 @@ namespace organizer
             }
         }
 
-        public static void SaveIdx()
+        public static void SaveIdx(ref Dictionary<string, object> dict)
         {
-            DataSave.dict.Add("contact_idx", idx_counter);
+            dict.Add("contact_idx", idx_counter);
         }
     }
 }

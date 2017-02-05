@@ -8,7 +8,16 @@ namespace organizer
 {
     class NoteManager
     {
-       private static List<NoteItem> notelist = new List<NoteItem>();               //список заметок
+        static NoteManager()
+        {
+            DataSave.onSave += SaveNotes;
+            
+            
+        }
+
+        
+
+        private static List<NoteItem> notelist = new List<NoteItem>();               //список заметок
 
         public static void AddNote(NoteItem item)                                   // добавлениие заметки
         {
@@ -69,9 +78,9 @@ namespace organizer
 
         }
 
-        public static void SaveNotes()
+        public static void SaveNotes(ref Dictionary<string, object> dict)
         {
-            DataSave.dict.Add("notes", notelist);
+            dict.Add("notes", notelist);
         }
     }
 }
