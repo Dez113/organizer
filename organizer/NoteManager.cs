@@ -11,11 +11,8 @@ namespace organizer
         static NoteManager()
         {
             DataSave.onSave += SaveNotes;
-            
-            
+            DataSave.onRestore += RestoreNotes;
         }
-
-        
 
         private static List<NoteItem> notelist = new List<NoteItem>();               //список заметок
 
@@ -81,6 +78,11 @@ namespace organizer
         public static void SaveNotes(ref Dictionary<string, object> dict)
         {
             dict.Add("notes", notelist);
+        }
+
+        public static void RestoreNotes (ref Dictionary<string, object> dict)
+        {
+            notelist = (List<NoteItem>)dict["notes"]; 
         }
     }
 }

@@ -79,7 +79,9 @@ namespace organizer
         public static Dictionary<string, object> dict = new Dictionary<string, object>();
         //onSave(ref dict)
         public delegate void DataSaving(ref Dictionary<string, object> dict);
+        public delegate void DataRestoring(ref Dictionary<string, object> dict);
         public static DataSaving onSave;
+        public static DataSaving onRestore;
 
         public static void Save()
         {
@@ -98,6 +100,14 @@ namespace organizer
             FileStream fs1 = new FileStream("saves.json", FileMode.Create);
             fs1.Write(save_data, 0, save_data.Length);
             fs1.Close();
+        }
+        public static void Restore()
+        {
+            onRestore(ref dict);
+
+            FileStream fs = new FileStream("saves.json", FileMode.Open);
+            fs.Read()
+
         }
     }
 }

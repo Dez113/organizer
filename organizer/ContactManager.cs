@@ -6,16 +6,12 @@ namespace organizer
     public class ContactManager
     {
         private static List<ContactItem> contactList = new List<ContactItem>();
-        //DataSave.onSave += DataSaving;
 
         static ContactManager()
         {
             DataSave.onSave += DataSaving;
-            
-            //DataSave.onSave += DataSaving;
+            DataSave.onRestore += RestoreContacts;
         }
-
-        
 
         public static void UpdateContactList(List<ContactItem> list)                                    //обновление контактлиста (загрузка)
         {
@@ -91,6 +87,10 @@ namespace organizer
         public static void DataSaving(ref Dictionary<string, object> dict)
         {
             dict.Add("contacts", contactList);
+        }
+        public static void RestoreContacts(ref Dictionary <string, object> dict)
+        {
+            contactList = (List<ContactItem>) dict["contacts"];
         }
     }
 }
