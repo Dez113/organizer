@@ -188,15 +188,14 @@ namespace organizer
 
         private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
-            //DataSave.Restore();                                                       
-            //UpdateContactListBox();
-            //UpdateNoteList();
+            Restore();                                                       
+            UpdateContactListBox();
+            UpdateNoteList();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)        //сохранение данных при закрытии
         {
             Save();
-            
         }
 
         private void seatchF3ToolStripMenuItem_Click(object sender, EventArgs e)

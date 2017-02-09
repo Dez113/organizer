@@ -19,6 +19,7 @@ namespace organizer
         static ContactItem()                                                                // пустой конструктор для сериализатора
         {
             DataSave.onSave += SaveIdx;
+            DataSave.onRestore += RestoreIdx;
         }
 
         public ContactItem(string name, string sername, string webpage, int age, int idx)
@@ -53,6 +54,11 @@ namespace organizer
         public static void SaveIdx(ref Dictionary<string, object> dict)
         {
             dict.Add("contact_idx", idx_counter);
+        }
+
+        public static void RestoreIdx(ref Dictionary<string, object> dict)
+        {
+            idx_counter = (int)dict["contact_idx"];
         }
     }
 }
