@@ -16,8 +16,6 @@ namespace organizer
     //    public List<NoteItem> notelist;
     //    public int idx_counter;
 
-
-
     //    public DataContainer()
     //    {
     //        contactlist = ContactManager.ReturnList();
@@ -76,8 +74,6 @@ namespace organizer
 
     public class DataSave
     {
-        public static Dictionary<string, object> dict = new Dictionary<string, object>();
-        //onSave(ref dict)
         public delegate void DataSaving(ref Dictionary<string, object> dict);
         public delegate void DataRestoring(ref Dictionary<string, object> dict);
         public static DataSaving onSave;
@@ -85,6 +81,7 @@ namespace organizer
 
         public static void Save()
         {
+            Dictionary<string, object> dict = new Dictionary<string, object>();
             onSave(ref dict);
             //ContactManager cm = new ContactManager();
             //NoteManager nm = new NoteManager();
@@ -113,8 +110,8 @@ namespace organizer
             //Dictionary<string, object> dict = JsonConvert.DeserializeObject<Dictionary<string, object>>((string)obj);
             //Console.WriteLine(dict);
 
-            //ContactManager cm = new ContactManager();            //восстановление все равно не работает,
-            //NoteManager nm = new NoteManager();                  // словарь отдается новым экземплярам классов?
+            ContactManager cm = new ContactManager();            //восстановление все равно не работает,
+            NoteManager nm = new NoteManager();                  // словарь отдается новым экземплярам классов?   
             onRestore(ref dict);
             
         }
