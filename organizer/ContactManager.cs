@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 //using static organizer.DataSave;
 
 namespace organizer
@@ -90,6 +91,7 @@ namespace organizer
         }
         public static void RestoreContacts(ref Dictionary <string, object> dict)
         {
+            Console.WriteLine(dict["contacts"]);
             contactList = (List<ContactItem>) dict["contacts"];
         }
     }

@@ -103,23 +103,31 @@ namespace organizer
         }
         public static void Restore()
         {
-            byte[] restored_data = new byte[] { };
-            FileStream fs2 = new FileStream("saves.json", FileMode.Open);
-            for (int i = 0; i < fs2.Length; i++)
-            {
-                 restored_data[i] = (byte)fs2.ReadByte();
-            }
-            fs2.Close();
-            string json2 = Encoding.UTF8.GetString(restored_data);
-            Dictionary<string, object> dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(json2);
-            
+            //byte[] restored_data = new byte[] { };
+            //FileStream fs2 = new FileStream("saves.json", FileMode.Open);
+            //for (int i = 0; i < fs2.Length; i++)
+            //{
+            //     restored_data[i] = (byte)fs2.ReadByte();
+            //}
+            //fs2.Close();
+            //string json2 = Encoding.UTF8.GetString(restored_data);
+            //Dictionary<string, object> dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(json2);
+
             //byte[] restore_data = fs2.ReadByte();                 // метод не работает, не восстанавливает
 
-            //StreamReader fs = new StreamReader("saves.json");
-            //string json = fs.ReadToEnd();
-            //Dictionary<string, object> dict = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
-            //fs.Close();
+            StreamReader fs = new StreamReader("saves.json");
+            string json = fs.ReadToEnd();
+            fs.Close();
+            Newtonsoft.Json.Linq.JObject obj = Newtonsoft.Json.Linq.JObject.Parse(json);
+            Console.WriteLine(obj);
+            Dictionary<string, object> dict = obj.ToObject<Dictionary<string, object>>();
+            Console.WriteLine(dict);
+            //Dictionary<string, object> dict = JsonConvert.DeserializeObject<Dictionary<string, object>>((string)obj);
+            //Console.WriteLine(dict);
+            
             onRestore(ref dict);
+            ContactManager cm = new ContactManager();
+            NoteManager nm = new NoteManager();
         }
     }
 }
