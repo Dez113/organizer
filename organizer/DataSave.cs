@@ -110,8 +110,8 @@ namespace organizer
             //Dictionary<string, object> dict = JsonConvert.DeserializeObject<Dictionary<string, object>>((string)obj);
             //Console.WriteLine(dict);
 
-            ContactManager cm = new ContactManager();            //восстановление все равно не работает,
-            NoteManager nm = new NoteManager();                  // словарь отдается новым экземплярам классов?   
+            //ContactManager cm = new ContactManager();            //восстановление все равно не работает,
+            //NoteManager nm = new NoteManager();                  // словарь отдается новым экземплярам классов?   
             onRestore(ref dict);
             
         }

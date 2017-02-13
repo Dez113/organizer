@@ -188,7 +188,7 @@ namespace organizer
 
         private void MainForm_Load(object sender, EventArgs e)                          // чтение данных из файла при открытии формы
         {
-            Restore();                                                       
+                                                                 
             UpdateContactListBox();
             UpdateNoteList();
         }

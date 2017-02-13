@@ -82,7 +82,8 @@ namespace organizer
 
         public static void RestoreNotes (ref Dictionary<string, object> dict)
         {
-            notelist = (List<NoteItem>)dict["notes"]; 
+            notelist = ((Newtonsoft.Json.Linq.JArray)dict["notes"]).ToObject<List<NoteItem>>();
+            //contactList = ((Newtonsoft.Json.Linq.JArray)dict["contacts"]).ToObject<List<ContactItem>>();
         }
     }
 }

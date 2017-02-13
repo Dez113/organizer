@@ -14,6 +14,10 @@ namespace organizer
         [STAThread]
         static void Main()
         {
+            NoteManager.ReturnListN();
+            ContactManager.ReturnContactList();
+            ContactItem.ReturnIdx();
+            DataSave.Restore();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

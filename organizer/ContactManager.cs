@@ -91,8 +91,9 @@ namespace organizer
         }
         public static void RestoreContacts(ref Dictionary <string, object> dict)
         {
-            Console.WriteLine(dict["contacts"]);
-            contactList = (List<ContactItem>) dict["contacts"];
+            
+            contactList = ((Newtonsoft.Json.Linq.JArray)dict["contacts"]).ToObject<List<ContactItem>>();
+            Console.WriteLine(contactList);
         }
     }
 }

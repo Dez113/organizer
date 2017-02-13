@@ -19,7 +19,7 @@ namespace organizer
         static ContactItem()                                                                // пустой конструктор для сериализатора
         {
             DataSave.onSave += SaveIdx;
-            DataSave.onRestore += RestoreIdx;
+            //DataSave.onRestore += RestoreIdx;
         }
 
         public ContactItem(string name, string sername, string webpage, int age, int idx)
@@ -58,7 +58,12 @@ namespace organizer
 
         public static void RestoreIdx(ref Dictionary<string, object> dict)
         {
-            idx_counter = (int)dict["contact_idx"];
+            idx_counter = ((Newtonsoft.Json.Linq.JArray)dict["contact_idx"]).ToObject<int>();
+        }
+
+        public static void ReturnIdx()
+        {
+            
         }
     }
 }
