@@ -30,3 +30,5 @@ D:\VS\organizer\organizer\obj\Debug\organizer.SearchForm.resources
 D:\Repos\organizer\organizer\obj\Debug\organizer.SearchForm.resources
 D:\Repos\organizer\organizer\bin\Debug\Newtonsoft.Json.dll
 D:\Repos\organizer\organizer\bin\Debug\Newtonsoft.Json.xml
+D:\VS\Projects\organizer\organizer\bin\Debug\Newtonsoft.Json.dll
+D:\VS\Projects\organizer\organizer\bin\Debug\Newtonsoft.Json.xml

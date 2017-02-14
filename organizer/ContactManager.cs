@@ -93,7 +93,7 @@ namespace organizer
         {
             
             contactList = ((Newtonsoft.Json.Linq.JArray)dict["contacts"]).ToObject<List<ContactItem>>();
-            Console.WriteLine(contactList);
+            //Console.WriteLine(contactList);
         }
     }
 }
