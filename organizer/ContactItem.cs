@@ -24,6 +24,7 @@ namespace organizer
 
         public ContactItem(string name, string sername, string webpage, int age, int idx)
         {
+            
             item_type = iType.contact;
             _name = name;
             _sername = sername;
@@ -49,6 +50,13 @@ namespace organizer
             {
                 return false;
             }
+        }
+
+        public override string ShortName()
+        {
+            ContactItem n_item = this;
+            string resault = n_item._name + " " + n_item._sername;
+            return resault;
         }
 
         public static void SaveIdx(ref Dictionary<string, object> dict)

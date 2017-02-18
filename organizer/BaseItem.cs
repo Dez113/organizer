@@ -15,9 +15,15 @@ namespace organizer
 
     public class BaseItem
     {
+        public static int idx;
         public virtual bool IsFound (string str)
         {
             return false;
+        }
+
+        public virtual string ShortName()
+        {
+            return "ShortName";
         }
     }
 }

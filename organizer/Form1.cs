@@ -203,6 +203,27 @@ namespace organizer
             SearchForm SearchForm = new SearchForm();
             SearchForm.Show();
         }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F3)
+            {
+                Form fc = Application.OpenForms["SearchForm"];
+                if (fc == null)
+                {
+                    SearchForm SearchForm = new SearchForm();
+                    SearchForm.Show();
+                }
+                else
+                {
+                    fc.Activate();
+                }
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }
 
