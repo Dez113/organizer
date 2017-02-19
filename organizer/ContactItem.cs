@@ -13,7 +13,7 @@ namespace organizer
         public string _webpage;
         public int _age;
         public int _idx;
-        public iType item_type;
+        
         public static int idx_counter = 0;
 
         static ContactItem()                                                                // пустой конструктор для сериализатора

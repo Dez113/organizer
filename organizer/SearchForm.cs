@@ -23,40 +23,19 @@ namespace organizer
             list.AddRange(ContactManager.ReturnList());
             list.AddRange(NoteManager.ReturnListN());
 
-            foreach (BaseItem item in list.ToArray())                              // Зачем здесь ToArray()? без него ругается на то, что коллекция была изменена и вываливается исключение
+            foreach (BaseItem item in list.ToArray())                              // потому что лист уменьшается, а этого делать нельзя
             {
                 Console.WriteLine(item);
                 if (item.GetType().ToString().Contains("ContactItem"))             //if (item.Equals(typeof(ContactItem)))  не работает
                 {
-                    ContactItem n_item = (ContactItem)item;
-                    if (n_item.IsFound(stringToFind) == false)
+                    if (!item.IsFound(stringToFind))
                     {
                         list.Remove(item);
-                        Console.WriteLine(n_item._name);
+                        //Console.WriteLine(n_item._name);
                     }
                 }
-                else
-                {
-                    if (item.GetType().ToString().Contains("NoteItem"))
-                    {
-                        NoteItem n_item = (NoteItem)item;
-                        if (n_item.IsFound(stringToFind) == false)
-                        {
-                            list.Remove(item);
-                            //Console.WriteLine(item.item_type);
-                        }
-                    }
-                }
-                
             }
-            //foreach (NoteItem itemN in NoteManager.ReturnListN())
-            //{
-            //    if (itemN.IsFound(stringToFind) == true)
-            //    {
-            //        list.Add(itemN);
-            //        //Console.WriteLine(itemN.item_type);
-            //    }
-            //}
+            
             return list;
         }
 
@@ -68,36 +47,7 @@ namespace organizer
 
             foreach (BaseItem item in allFounded)
             {
-                if (item.GetType().ToString().Contains("ContactItem"))
-                {
-                    ContactItem n_item = (ContactItem)item;
-                    listBox1.Items.Add(n_item.ShortName());
-                }
-                else
-                {
-                    if (item.GetType().ToString().Contains("NoteItem"))
-                    {
-                        NoteItem n_item = (NoteItem)item;
-                        listBox1.Items.Add(n_item.ShortName());
-                    }
-                }
-                
-                //if (item.GetType().ToString().Contains("ContactItem"))
-                //{
-                //    ContactItem cItem = (ContactItem)item;                            //   приведение типа работает для всех пследующих значений.......
-                //    listBox1.Items.Add(cItem.GetType().ToString() + "\t" + cItem._name + "\t" + cItem._sername);
-                //}
-                //else
-                //{
-                //    if (item.GetType().ToString().Contains("NoteItem"))
-                //    {
-                //        NoteItem nItem = (NoteItem)item;
-                //        listBox1.Items.Add(nItem.GetType().ToString() + "\t" + nItem.notename + "\t" + nItem.notetext);
-                //        Console.WriteLine(nItem.item_type);
-                //    }
-                //}
-
-                //listBox1.Items.Add(item.GetType());   //выводит правильные типы
+                listBox1.Items.Add(item.ShortName() + "\t" + item.item_type);
             }
         }
 

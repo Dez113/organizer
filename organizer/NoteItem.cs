@@ -10,7 +10,6 @@ namespace organizer
     {
         public string notename;
         public string notetext;
-        public iType item_type;
 
         public NoteItem()
         {
@@ -35,7 +34,7 @@ namespace organizer
         public override string ShortName()
         {
             NoteItem n_item = this;
-            //string resault;
+
             if (n_item.notetext.Length > 6)
             {
                 string resault = n_item.notename + " " + n_item.notetext.Substring(0, 6);

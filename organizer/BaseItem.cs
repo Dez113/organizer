@@ -15,7 +15,8 @@ namespace organizer
 
     public class BaseItem
     {
-        public static int idx;
+        public int idx;
+        public iType item_type;
         public virtual bool IsFound (string str)
         {
             return false;
